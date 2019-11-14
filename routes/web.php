@@ -112,3 +112,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('trangchu',function(){
     return view('pages.trangchu');
 });
+
+Route::get('pages','PageController@trangchu');
+
+Route::get('pages/showproduct/{id}','PageController@showproduct');
+
+Route::get('pages/news','PageController@News');

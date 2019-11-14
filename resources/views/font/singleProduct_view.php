@@ -14,7 +14,7 @@
 		<div class="row">
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 					<div class="avatar">
-						<a href=""><img src="/project2/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
+						<a href=""><img src="project2/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">

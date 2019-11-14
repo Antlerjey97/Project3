@@ -33,17 +33,17 @@
 				</form>
 				<ul class="nav navbar-nav navbar-right">
 					
-					<li><a href="/project2/Home/showProduct/<?php //echo  $header[0]['id'] ?>"><?php
-					// echo $header[0]['name'] ?>
+					<li><a href="pages/showproduct/<?php echo  $header[0]['id'] ?>"><?php
+					 echo $header[0]['name'] ?>
 					<i class="icon glyphicon glyphicon-phone"></i></a></li>
-					<li><a href="/project2/Home/showProduct/<?php// echo  $header[1]['id'] ?>"><?php 
-					//echo $header[1]['name'] ?><i class="icon fas fa-tablet-alt"></i></a></li>
-					<li><a href="/project2/Home/showProduct/<?php// echo  $header[2]['id'] ?>"><?php 
-					//echo $header[2]['name'] ?><i class="icon fas fa-laptop"></i></a></li>
-					<li><a href="/project2/Home/showProduct/<?php// echo  $header[3]['id'] ?>"><?php
-					// echo $header[3]['name'] ?><i class="icon fas fa-headphones"></i></a></li>
+					<li><a href="pages/showproduct/<?php echo  $header[1]['id'] ?>"><?php 
+					echo $header[1]['name'] ?><i class="icon fas fa-tablet-alt"></i></a></li>
+					<li><a href="pages/showproduct/<?phpecho  $header[2]['id'] ?>"><?php 
+					echo $header[2]['name'] ?><i class="icon fas fa-laptop"></i></a></li>
+					<li><a href="pages/showproduct/<?php echo  $header[3]['id'] ?>"><?php
+					 echo $header[3]['name'] ?><i class="icon fas fa-headphones"></i></a></li>
 
-					<li><a href="/project2/Home/TinTuc">Tin tức<i class="icon glyphicon glyphicon-list-alt"></i></a></li>
+					<li><a href="pages/news">Tin tức<i class="icon glyphicon glyphicon-list-alt"></i></a></li>
 					<li class="action giohang">
 					 <a href="/project2/Home/Cart">Giỏ hàng<i class="icon cart fas fa-project2ping-cart"></i><span class="quantity" id="sl"><?php 
 					 //echo $quantity ?></span></a></li>

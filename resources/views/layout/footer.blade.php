@@ -38,29 +38,29 @@
 				</div>
 			</div>
 		</div>
-		<?php// foreach ($footer as $key => $value): ?>
+		<?php foreach ($footer as $key => $value): ?>
 		
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 middle addressCompany">
 			    <h4>Thông tin công ty</h4>
 				<ul>
-					<li>© Bản quyền thuộc <?php// echo $value['name'] ?></li>
-					<li>Địa chỉ:<?php //echo $value['address'] ?></li>
-					<li>Điện thoại:<?php// echo $value['phone'] ?></li>
-					<li>Email:<?php// echo $value['email'] ?></li>
+					<li>© Bản quyền thuộc <?php echo $value['name'] ?></li>
+					<li>Địa chỉ:<?php echo $value['address'] ?></li>
+					<li>Điện thoại:<?php echo $value['phone'] ?></li>
+					<li>Email:<?php echo $value['email'] ?></li>
 				</ul>	
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 middle social">
 				<h4>Liên kết với chúng tôi</h4>
 				<ul>
-					<li><a href="<?php //echo $value['link_fb'] ?>"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="<?php// echo $value['link_instagram'] ?>"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="<?php //echo $value['link_youtube'] ?>"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="<?php echo $value['link_fb'] ?>"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="<?php echo $value['link_instagram'] ?>"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="<?php echo $value['link_youtube'] ?>"><i class="fab fa-youtube"></i></a></li>
 				</ul>
 			</div>
 		</div>
 
-		<?php// endforeach ?>
+		<?php endforeach ?>
 		<div class="row">
 			<div class="bottom">
 			<p>© 2019 - Copyright</p>
