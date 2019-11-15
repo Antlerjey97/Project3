@@ -16,30 +16,36 @@ class PageController extends Controller
 {
     //
      function __construct(){
-               
+               $phone=DB::table('products')
+                        ->select('products.*','promotion.name AS promotion')
+                        ->where('products.id_category',1)
+                        ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                        ->get();
+                        $phone=(array)$phone;
+
+                       view()->share('phone',$phone);
+                $tablet=product::where('id_category',62)->get();
+                       view()->share('tablet',$tablet);
+                $phukien=product::where('id_category',70)->get();
+                       view()->share('phukien',$phukien);
+                $laptop=product::where('id_category',63)->get();
+                       view()->share('laptop',$laptop);
 
 
-               $new=product::where('status',3)->get();
-                view()->share('new',$new);
+
+               $new=   $new=Db::table('products')
+                       ->select('products.*','promotion.name AS promotion')
+                       ->where('products.status',3)
+                       ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                       ->get();
+                       $new=(array)$new;
+                        view()->share('product',$new);
+                        view()->share('new',$new);
             	$banner=banner::all();
-            	view()->share('banner',$banner);
+            	       view()->share('banner',$banner);
             	$category=category::all();
-            	view()->share('header',$category);
-            	$phone=product::where('id_category',1)->get();
-            	view()->share('phone',$phone);
-
-            	$tablet=product::where('id_category',62)->get();
-            	view()->share('tablet',$tablet);
-
-
-                $new=product::where('status',3)->get();
-                view()->share('product',$new);
-
-            	$phukien=product::where('id_category',70)->get();
-            	view()->share('phukien',$phukien);
-            	$laptop=product::where('id_category',63)->get();
-            	view()->share('laptop',$laptop);
-
+            	       view()->share('header',$category);
+            	
             	$footer=info_company::all();
             	view()->share('footer',$footer);
              //     if(Auth::check()){
@@ -53,8 +59,16 @@ class PageController extends Controller
     }
     public function showproduct($id)
     {
-    	$phone=product::where('id_category',$id)->get();
-    	return view('pages.showproduct',['products'=>$phone]);
+    	$phone=DB::table('products')
+                ->select('products.*','promotion.name AS promotion')
+                ->where('products.id_category',$id)
+                ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                ->get();
+       $phone=(array)$phone;
+
+            
+            $product=product::where('id_category',$id)->get();
+    	return view('pages.showproduct',['product'=>$phone,'products'=>$product]);
     }
     public function News()
     {

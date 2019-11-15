@@ -15,7 +15,13 @@
 		<div class="row">
 		<div class="products">
 		<?php $i=0; ?>		
-		<?php foreach ($products as $key => $value): ?>
+
+		<?php foreach ($product as  $val): ?>
+
+			
+			<?php foreach ($val as $value):  $value=(array)$value;?>
+				
+			
 		<?php if($i==8) break; ?>	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
@@ -31,11 +37,12 @@
 			 	<?php }else{ ?>
 			 		<div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>	
 			 	<?php } ?>	
-			 	<div class="note"><?php// echo $value['promotion'] ?></div>
+			 	<div class="note"><?php echo $value['promotion'] ?></div>
 			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>		
 			 </div>		
 			</div> <!-- end 1sp -->
 		<?php $i++; ?>	
+		<?php endforeach ?>
 		<?php endforeach ?> 
 		</div>
       </div>

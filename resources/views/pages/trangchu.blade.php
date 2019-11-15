@@ -11,7 +11,14 @@
 		</div>
 		<div class="row">
 			<div class="products">
-		<?php foreach ($new as $key => $value): ?>
+		<?php foreach ($new as  $val): ?>
+				<?php foreach ($val as $value):
+
+					$value=(array)$value;
+				 ?>
+					
+			
+
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
 			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
@@ -29,13 +36,14 @@
 			 		<div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>	
 			 	<? php } ?>	
 			 		
-			 		<div class="note"><?php // echo  $value['promotion'] ?></div>
+			 		<div class="note"><?php  echo  $value['promotion'] ?></div>
 			 
 			 	
 			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>
 			 	<div class="new"><img src="/uploads/ImageBanner/New.png" alt=""></div>		
 			 </div>		
 			</div> <!-- end 1sp -->
+				<?php endforeach ?>
 		<?php endforeach ?>  
 		</div>
       </div>
@@ -52,8 +60,15 @@
 		<div class="row">
 		<div class="products">
 		<?php $i=0; ?>		
-		<?php foreach ($phone as $key => $value): ?>
-		<?php if($i==4) break; ?>	
+		<?php foreach ($phone as  $val): ?>
+				
+			<?php foreach ($val as $value): 
+
+				$value=(array)$value;?>
+				<?php if($i==4) break; ?>
+				
+
+	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
 			 	<a href="/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" 
@@ -70,13 +85,16 @@
 			 	<?php }else{ ?>
 			 		<div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>	
 			 	<?php  } ?>	
-			 	<div class="note"><?php// echo $value['promotion'] ?></div>
+			 	<div class="note"><?php echo $value['promotion'] ?></div>
 			 	<div class="addToCart">
 			 		<button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button>
 			 	</div>		
 			 </div>		
 			</div> <!-- end 1sp -->
-		<?php $i++; ?>	 
+			<?php $i++; ?>	 
+					<?php endforeach ?>
+		
+			
 		<?php endforeach ?> 
 		</div>
       </div>

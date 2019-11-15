@@ -38,7 +38,7 @@
 					<i class="icon glyphicon glyphicon-phone"></i></a></li>
 					<li><a href="pages/showproduct/<?php echo  $header[1]['id'] ?>"><?php 
 					echo $header[1]['name'] ?><i class="icon fas fa-tablet-alt"></i></a></li>
-					<li><a href="pages/showproduct/<?phpecho  $header[2]['id'] ?>"><?php 
+					<li><a href="pages/showproduct/<?php echo  $header[2]['id'] ?>"><?php 
 					echo $header[2]['name'] ?><i class="icon fas fa-laptop"></i></a></li>
 					<li><a href="pages/showproduct/<?php echo  $header[3]['id'] ?>"><?php
 					 echo $header[3]['name'] ?><i class="icon fas fa-headphones"></i></a></li>

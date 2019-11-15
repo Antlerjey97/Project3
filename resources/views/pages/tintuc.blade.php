@@ -96,8 +96,15 @@
 
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tintuc_khuyenmai">
                 <div class="titleNewProduct">Sản phẩm mới</div>
-                <?php foreach ($product as $key => $value): ?>
-                <?php if($i==8) break; ?>   
+                <?php foreach ($product as  $val): ?>
+
+
+                <?php if($i==8) break; ?>  
+                <?php foreach ($val as $value):
+                        $value=(array)$value;
+                 ?>
+                     
+                
                 <div class="product">
                 <a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
                     <img width="100%" src="/project3/public/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi">
@@ -115,12 +122,13 @@
                 <?php }else{ ?>
                     <div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>  
                 <?php } ?>  
-                <div class="note"><?php// echo $value['promotion'] ?></div>
+                <div class="note"><?php echo $value['promotion'] ?></div>
                 <div class="addToCart">
                     <button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button>
                 </div>      
              </div>     
             <?php $i++; ?>   
+              <?php endforeach ?>
             <?php endforeach ?>
             </div>
 
