@@ -21,8 +21,8 @@
 
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
 			 	<? php if($value['price_sales']){ ?>
 			 	<div class="prices">
 			 	<div class="span-group">
@@ -71,10 +71,10 @@
 	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
-			 	<a href="/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" 
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" 
 			 					src="uploads/product/<?php echo $value['image'] ?>"
 			 	 alt="Lỗi"></a>
-			 	<a href="/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
 			 	<?php if($value['price_sales']){ ?>
 			 	<div class="prices">
 			 	<div class="span-group">
@@ -120,8 +120,8 @@
 		<?php if($i==4) break; ?>	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
 			 	<?php if($value['price_sales']){ ?>
 			 	<div class="prices">
 			 	<div class="span-group">
@@ -162,8 +162,8 @@
 		<?php if($i==4) break; ?>	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
 			 	<?php if($value['price_sales']){ ?>
 			 	<div class="prices">
 			 	<div class="span-group">
@@ -204,8 +204,8 @@
 		<?php if($i==4) break; ?>	
 			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 			 <div class="product">
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
-			 	<a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
+			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
 			 	<?php if($value['price_sales']){ ?>
 			 	<div class="prices">
 			 	<div class="span-group">

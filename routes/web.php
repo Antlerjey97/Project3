@@ -118,3 +118,9 @@ Route::get('pages','PageController@trangchu');
 Route::get('pages/showproduct/{id}','PageController@showproduct');
 
 Route::get('pages/news','PageController@News');
+
+Route::get('pages/newdetail/{id}','PageController@newdetail');
+
+Route::get('pages/singleProduct/{id}/{a}','PageController@singleProduct');
+
+Route::get('pages/loadmore','Homepage@loadMore');

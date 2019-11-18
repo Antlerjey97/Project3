@@ -76,4 +76,29 @@ class PageController extends Controller
 
     	return view('pages.tintuc',['listNews'=>$news]);
     }
+
+    public function newdetail($id)
+    {
+        $tintuc=promotionNews::where('id',$id)->get();
+
+        return view('pages.tintucdetail',['tintuc'=>$tintuc]);
+        
+    }
+    public function singleProduct($id ,$a)
+    {
+        $data=product::where('id',$a)->get();
+
+
+        $listCmt=DB::table('users')
+        ->select('users.*','comment.content As content')
+        ->where('comment.product_id',$a)
+        ->leftjoin('comment','comment.user_id','=','users.id')
+        ->get();
+
+            $listCmt=(array)$listCmt;
+        $spSame=product::where('id_category',$id)->get();
+    
+  
+        return view('pages.singleproduct',['data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
+    }
 }

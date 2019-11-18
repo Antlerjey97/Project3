@@ -21,7 +21,7 @@
                     <?php $i=0; ?>
                     <?php foreach ($listNews as $news): ?> 
             	    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tintuc_newest">
-                		<a href="/project2/Home/TinTucDetail/<?php echo $news['id'] ?>">
+                		<a href="pages/newdetail/<?php echo $news['id'] ?>">
                 			<img width="457px" class="anhtintucmoi" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
                 			<h3 class="title"><?php echo $news['title'] ?></h3>
                 			<p class="tomtat"><?php echo $news['summary'] ?></p>
@@ -35,9 +35,9 @@
                     <ul>
                     <?php $j=0; ?>
                     <?php foreach ($listNews as $news): ?> 
-                        <?php if($j == 1) { ?>               
+                        <?php if($j == 1) { ?>              s 
                             <li>
-                                <a href="/project2/Home/TinTucDetail/<?php echo $news['id'] ?>">
+                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <img width="220px" class="anhtintucphu" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
                                     <h4 class="title"><?php echo $news['title'] ?></h4>
                                 </a>            
@@ -46,7 +46,7 @@
                         <?php if(($j > 1) && ($j < 4)){ ?>
                             <hr>
                             <li>
-                                <a href="/project2/Home/TinTucDetail/<?php echo $news['id'] ?>">
+                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <h4 class="title"><?php echo $news['title'] ?></h4>
                                 </a>
                             </li>
@@ -65,10 +65,10 @@
                     <?php foreach ($listNews as $news): ?> 
                         <?php if($x > 3 && $x < 9){ ?>           
                             <li>
-                                <a href="/project2/Home/TinTucDetail/<?php echo $news['id'] ?>">
+                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <span class="row">
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <img width="200px" src="../uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="" class="anhtintuccu">
+                                            <img width="200px" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="" class="anhtintuccu">
                                         </div>
                                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                                             <h3 class="title"><?php echo $news['title'] ?></h3>
@@ -106,7 +106,7 @@
                      
                 
                 <div class="product">
-                <a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
+                <a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
                     <img width="100%" src="/project3/public/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi">
                 </a>
                 <a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
