@@ -11,6 +11,10 @@
 	@include('layout.header')
 
 <?php foreach ($data as $key => $value): ?>
+
+	<?php foreach ($value as $value): ?>
+		<?php $value=(array)$value; ?>
+				
 <div class="singleProduct">
 	 <div class="container">
 		<div class="row">
@@ -32,7 +36,7 @@
 							<div class="priceSale"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>
 						</div>
 					<?php } ?>
-						<div class="noteKM"><?php // echo $value['promotion'] ?></div>
+						<div class="noteKM"><?php echo $value['promotion'] ?></div>
 						<div class="quantitySale">
 							<div class="btn-group">
 								<button type="button" id="minus" class="btn btn-default">-</button>
@@ -40,7 +44,7 @@
 								<button type="button" id="plus" class="btn btn-default">+</button>
 							</div>
 						</div>
-						<input type="hidden" id="idProduct" value="<?php echo $data[0]['id'] ?>">
+						<input type="hidden" id="idProduct" value="<?php echo $dl[0]['id'] ?>">
 						<div class="updateCart">
 							<button class="btn btn-danger" id="updateCart">Cập nhật giỏ hàng</button>
 						</div>
@@ -62,7 +66,7 @@
 				<div class="row">
 					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 cmtProduct">
 						<div class="title" style="font-size: 18px;">
-							Nhận xét của bạn về <?php echo $data[0]['name'] ?>
+							Nhận xét của bạn về <?php echo $dl[0]['name'] ?>
 						</div>
 						<div class="contentCmtMe">
 							<textarea style="resize: vertical;" name="cmtMe" cols="106" rows="5"  style="resize:none" id="cmtMe" ></textarea>
@@ -79,14 +83,14 @@
 					<?php if (count($listCmt) == 0): ?>
 						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 cmtProduct">
 							<div class="title" style="font-size: 16px;">
-								Chưa có nhận xét nào về <?php echo $data['0']['name'] ?>
+								Chưa có nhận xét nào về <?php echo $dl['0']['name'] ?>
 							</div>
 						</div>
 					<?php else: ?>
 					<input type="hidden" id="productCmt" value="<?php// echo $listCmt[0]['product_id'] ?>">
 					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 cmtProduct">
 						<div class="title">
-							Nhận xét của mọi người về <?php echo $data['0']['name'] ?>
+							Nhận xét của mọi người về <?php echo $dl['0']['name'] ?>
 						</div>
 						<div class="listcomment">
 						<?php foreach ($listCmt as $key => $val): ?>
@@ -123,7 +127,7 @@
 				<?php endif ?>
 				</div>
 	
-				
+					<?php endforeach ?>
 			<?php endforeach ?>
 		</div> 
 	</div> 

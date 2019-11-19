@@ -22,83 +22,88 @@ class PageController extends Controller
                         ->leftjoin('promotion','promotion.id','=','products.id_promotion')
                         ->get();
                         $phone=(array)$phone;
-
                        view()->share('phone',$phone);
+
                 $tablet=product::where('id_category',62)->get();
-                       view()->share('tablet',$tablet);
+                           view()->share('tablet',$tablet);
                 $phukien=product::where('id_category',70)->get();
-                       view()->share('phukien',$phukien);
+                           view()->share('phukien',$phukien);
                 $laptop=product::where('id_category',63)->get();
-                       view()->share('laptop',$laptop);
+                           view()->share('laptop',$laptop);
 
 
 
                $new= $new=Db::table('products')
-                       ->select('products.*','promotion.name AS promotion')
-                       ->where('products.status',3)
-                       ->leftjoin('promotion','promotion.id','=','products.id_promotion')
-                       ->get();
-                       $new=(array)$new;
-                        view()->share('product',$new);
-                        view()->share('new',$new);
+                           ->select('products.*','promotion.name AS promotion')
+                           ->where('products.status',3)
+                           ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                           ->get();
+                           $new=(array)$new;
+                            view()->share('product',$new);
+                            view()->share('new',$new);
             	$banner=banner::all();
-            	       view()->share('banner',$banner);
+            	            view()->share('banner',$banner);
             	$category=category::all();
-            	       view()->share('header',$category);
+            	            view()->share('header',$category);
             	
             	$footer=info_company::all();
-            	view()->share('footer',$footer);
+            	            view()->share('footer',$footer);
              //     if(Auth::check()){
              // view()->share('nguoidung',Auth::user());
              //     }
         }
 
-    public function trangchu(){
+        public function trangchu()
+        {
 
-    	return view('pages.trangchu');
-    }
-    public function showproduct($id)
-    {
-    	$phone=DB::table('products')
-                ->select('products.*','promotion.name AS promotion')
-                ->where('products.id_category',$id)
-                ->leftjoin('promotion','promotion.id','=','products.id_promotion')
-                ->get();
-       $phone=(array)$phone;
+        	       return view('pages.trangchu');
+            }
+        public function showproduct($id)
+            {
+                	$phone=DB::table('products')
+                            ->select('products.*','promotion.name AS promotion')
+                            ->where('products.id_category',$id)
+                            ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                            ->get();
+                   $phone=(array)$phone;
 
-            
-            $product=product::where('id_category',$id)->get();
-    	return view('pages.showproduct',['product'=>$phone,'products'=>$product]);
-    }
-    public function News()
-    {
-    	$news =promotionNews::all();
+                
+                    $product=product::where('id_category',$id)->get();
+        	   return view('pages.showproduct',['product'=>$phone,'products'=>$product]);
+              }
+        public function News()
+            {
+            	$news =promotionNews::all();
 
-    	return view('pages.tintuc',['listNews'=>$news]);
-    }
+            	return view('pages.tintuc',['listNews'=>$news]);
+            }
 
-    public function newdetail($id)
-    {
-        $tintuc=promotionNews::where('id',$id)->get();
+        public function newdetail($id)
+                    {
+                        $tintuc=promotionNews::where('id',$id)->get();
+                        return view('pages.tintucdetail',['tintuc'=>$tintuc]);
+                        
+                    }
+        public function singleProduct($id ,$a)
+                    {
+                        $data=DB::table('products')
+                                ->select('products.*','promotion.name AS promotion')
+                                ->where('products.id',$a)
+                                ->leftjoin('promotion','promotion.id','=','products.id_promotion')
+                                ->get();
+                        $data=(array)$data;
 
-        return view('pages.tintucdetail',['tintuc'=>$tintuc]);
-        
-    }
-    public function singleProduct($id ,$a)
-    {
-        $data=product::where('id',$a)->get();
+                        $dl=product::where('id',$a)->get();
+                        $listCmt=DB::table('users')
+                                ->select('users.*','comment.content As content')
+                                ->where('comment.product_id',$a)
+                                ->leftjoin('comment','comment.user_id','=','users.id')
+                                ->get();
+                            $listCmt=(array)$listCmt;
 
-
-        $listCmt=DB::table('users')
-        ->select('users.*','comment.content As content')
-        ->where('comment.product_id',$a)
-        ->leftjoin('comment','comment.user_id','=','users.id')
-        ->get();
-
-            $listCmt=(array)$listCmt;
-        $spSame=product::where('id_category',$id)->get();
-    
-  
-        return view('pages.singleproduct',['data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
-    }
-}
+                        $spSame=product::where('id_category',$id)->get();
+                    
+                  
+                        return view('pages.singleproduct',['dl'=>$dl,'data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
+                    }
+                }
