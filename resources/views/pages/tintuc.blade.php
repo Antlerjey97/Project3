@@ -148,22 +148,24 @@
 				sl=parseInt(sl);
 				$('#sltt').val(sl+5);
 				$.ajax({
-					url: '/project2/Home/loadMoreTintuc',
+					url: 'tintuc/loadmore',
 					type: 'POST',
-					data: {offset:sl}
+					data: {offset:sl,_token: "{{ csrf_token() }}"}
 				})
 				.done(function() {
 				})
 				.fail(function() {
 				})
 				.always(function(data) {
-                    x = data.indexOf(">");
-                    data = data.slice(x+1, data.length);
+                    // x = data.indexOf(">");
+                    // data = data.slice(x+1, data.length);
+
+                    console.log(data);
                     data = JSON.parse(data)
 					if (data.status !='NULL') {
 						$('.listTintuc').append(data.data);
 					}else{
-						$('.viewMore').html('<b></b>');
+						$('.viewMore').html('<b class="endProduct" >Đã hết Tin tức </b>');
 					}
 				});
 			});

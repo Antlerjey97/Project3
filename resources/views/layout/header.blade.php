@@ -55,8 +55,8 @@
 					</li>
 					<li class="action"><a href="/project2/Home/logout">Thoát</a></li>
 					<?php // } else {?>
-					<li class="action"><a class="dky" href="#">Đăng ký</a></li>
-					<li class="action"><a class="dNhap" href="#">Đăng nhập</a></li>
+					<li class="action"><a class="dky" >Đăng ký</a></li>
+					<li class="action"><a class="dNhap" >Đăng nhập</a></li>
 					<?php// }?>
 				</ul>
 			</div><!-- /.navbar-collapse -->

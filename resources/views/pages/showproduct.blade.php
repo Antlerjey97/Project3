@@ -66,17 +66,17 @@
 					sl=parseInt(sl);
 					$('#slsp').val(sl+8);
 					$.ajax({
-						url: 'project3/public/pages/loadmore',
+						url: 'pages/loadmore',
 						type: 'POST',
-						data: {idCartegory:id_category,offset:sl}
+						data: {idCartegory:id_category,offset:sl,_token: "{{ csrf_token() }}"},
 					})
 					.done(function() {
 					})
 					.fail(function() {
 					})
 					.always(function(data) {
-						x = data.indexOf(">");
-						data = data.slice(x+1, data.length);
+						// x = data.indexOf(">");
+						// data = data.slice(x+1, data.length);
 						data = JSON.parse(data);
 						if (data.status =='NULL') {
 							$('.viewMore').html('<b class="endProduct" >Đã hết sản phẩm</b>');

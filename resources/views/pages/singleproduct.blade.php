@@ -280,6 +280,8 @@
 		.always(function(data) {
 				x = data.indexOf(">");
 				data = data.slice(x+1, data.length);
+
+				
 				data = JSON.parse(data);
 			if (data=='cmttsuccess' && contentCmt != '') {
 			alert('Bình luận của bạn đã được ghi nhận !');

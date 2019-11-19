@@ -12,6 +12,7 @@
 		<div class="row">
 			<div class="products">
 		<?php foreach ($new as  $val): ?>
+		
 				<?php foreach ($val as $value):
 
 					$value=(array)$value;

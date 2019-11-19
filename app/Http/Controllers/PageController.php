@@ -33,7 +33,7 @@ class PageController extends Controller
 
 
 
-               $new=   $new=Db::table('products')
+               $new= $new=Db::table('products')
                        ->select('products.*','promotion.name AS promotion')
                        ->where('products.status',3)
                        ->leftjoin('promotion','promotion.id','=','products.id_promotion')
