@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    //
      function __construct(){
                $phone=DB::table('products')
                         ->select('products.*','promotion.name AS promotion')
@@ -23,16 +22,12 @@ class PageController extends Controller
                         ->get();
                         $phone=(array)$phone;
                        view()->share('phone',$phone);
-
                 $tablet=product::where('id_category',62)->get();
                            view()->share('tablet',$tablet);
                 $phukien=product::where('id_category',70)->get();
                            view()->share('phukien',$phukien);
                 $laptop=product::where('id_category',63)->get();
                            view()->share('laptop',$laptop);
-
-
-
                $new= $new=Db::table('products')
                            ->select('products.*','promotion.name AS promotion')
                            ->where('products.status',3)
@@ -52,39 +47,26 @@ class PageController extends Controller
              // view()->share('nguoidung',Auth::user());
              //     }
         }
-
-        public function trangchu()
-        {
-
-        	       return view('pages.trangchu');
-            }
-        public function showproduct($id)
-            {
-                	$phone=DB::table('products')
+    public function trangchu()
+        {   	return view('pages.trangchu');       }
+    public function showproduct($id)
+            {      $phone=DB::table('products')
                             ->select('products.*','promotion.name AS promotion')
                             ->where('products.id_category',$id)
                             ->leftjoin('promotion','promotion.id','=','products.id_promotion')
                             ->get();
                    $phone=(array)$phone;
-
-                
                     $product=product::where('id_category',$id)->get();
-        	   return view('pages.showproduct',['product'=>$phone,'products'=>$product]);
-              }
-        public function News()
-            {
-            	$news =promotionNews::all();
-
-            	return view('pages.tintuc',['listNews'=>$news]);
-            }
-
-        public function newdetail($id)
+        	   return view('pages.showproduct',['product'=>$phone,'products'=>$product]);    }
+    public function News()
+            {      $news =promotionNews::all();
+            	return view('pages.tintuc',['listNews'=>$news]);            }
+    public function newdetail($id)
                     {
                         $tintuc=promotionNews::where('id',$id)->get();
-                        return view('pages.tintucdetail',['tintuc'=>$tintuc]);
-                        
+                        return view('pages.tintucdetail',['tintuc'=>$tintuc]);    
                     }
-        public function singleProduct($id ,$a)
+    public function singleProduct($id ,$a)
                     {
                         $data=DB::table('products')
                                 ->select('products.*','promotion.name AS promotion')
@@ -102,8 +84,10 @@ class PageController extends Controller
                             $listCmt=(array)$listCmt;
 
                         $spSame=product::where('id_category',$id)->get();
-                    
-                  
-                        return view('pages.singleproduct',['dl'=>$dl,'data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
+ return view('pages.singleproduct',['dl'=>$dl,'data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
                     }
+
+    public function getcart()
+    { return view('pages.cart');    
+    }
                 }

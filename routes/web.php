@@ -122,7 +122,7 @@ Route::get('pages/news','PageController@News');
 Route::get('pages/newdetail/{id}','PageController@newdetail');
 
 Route::get('pages/singleProduct/{id}/{a}','PageController@singleProduct');
+Route::get('pages/cart','PageController@getcart');
 
 Route::post('pages/loadmore','Productmore@loadMore');
-
 Route::post('tintuc/loadmore','Tintucmore@loadMore');
