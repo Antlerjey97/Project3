@@ -42,7 +42,7 @@ class Tintucmore extends Controller
 								$htmlAdd.='<span class="row">';
 								$htmlAdd.= '<div class="span-group">';
 								$htmlAdd.= ' <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">';
-								$htmlAdd.= '<img width="200px" src="/project3/public/uploads/ImagePromotionNews/'.$tintuc3['image'].'" alt="" class="anhtintuccu">';
+								$htmlAdd.= '<img width="200px" src="/uploads/ImagePromotionNews/'.$tintuc3['image'].'" alt="" class="anhtintuccu">';
 								$htmlAdd.= ' </div>';
 								$htmlAdd.= '<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">';
 								$htmlAdd.=' <h3 class="title">'.$tintuc3['title'].'</h3>';

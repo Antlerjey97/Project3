@@ -38,7 +38,7 @@ class Productmore extends Controller
 							$value=(array)$value;
 						
 						$htmlAdd .= '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"><div class="product"><a href="pages/singleProduct/'.$value['id_category'].'/'.$value['id'].'">';
-						 $htmlAdd.='<img width="100%" src="/project2/uploads/product/'.$value['image'].'" alt="Lỗi"></a>';
+						 $htmlAdd.='<img width="100%" src="/uploads/product/'.$value['image'].'" alt="Lỗi"></a>';
 						 $htmlAdd.=	'<a href="pages/singleProduct/'.$value['id_category'].'/'.$value['id'].'">';
 						 $htmlAdd.='<div class="name">'.$value['name'].'</div></a>';
 						 if ($value['price_sales']) {

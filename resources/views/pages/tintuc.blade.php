@@ -22,7 +22,7 @@
                     <?php foreach ($listNews as $news): ?> 
             	    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tintuc_newest">
                 		<a href="pages/newdetail/<?php echo $news['id'] ?>">
-                			<img width="457px" class="anhtintucmoi" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
+                			<img width="457px" class="anhtintucmoi" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
                 			<h3 class="title"><?php echo $news['title'] ?></h3>
                 			<p class="tomtat"><?php echo $news['summary'] ?></p>
                 		</a>
@@ -38,7 +38,7 @@
                         <?php if($j == 1) { ?>              s 
                             <li>
                                 <a href="pages/newdetail/<?php echo $news['id'] ?>">
-                                    <img width="220px" class="anhtintucphu" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
+                                    <img width="220px" class="anhtintucphu" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
                                     <h4 class="title"><?php echo $news['title'] ?></h4>
                                 </a>            
                             </li>
@@ -68,7 +68,7 @@
                                 <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <span class="row">
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <img width="200px" src="/project3/public/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="" class="anhtintuccu">
+                                            <img width="200px" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="" class="anhtintuccu">
                                         </div>
                                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                                             <h3 class="title"><?php echo $news['title'] ?></h3>
@@ -107,7 +107,7 @@
                 
                 <div class="product">
                 <a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
-                    <img width="100%" src="/project3/public/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi">
+                    <img width="100%" src="/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi">
                 </a>
                 <a href="/project2/Home/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
                     <div class="name"><?php echo $value['name'] ?></div>

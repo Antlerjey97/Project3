@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/project2/lib/home/cart.css">
 	<script src="/project2/lib/home/editQuantityCart.js"></script>
 </head>
-<body>	 
+<body>
     @include('layout.header')
 
  <div class="add"></div>
@@ -22,27 +22,27 @@
      </div>
      </div>
      </div>
-     <?php  //}else{ 
+     <?php  //}else{
      	$allPrice=0;
-		//$cart=$this->session->userdata('cart');			
+		//$cart=$this->session->userdata('cart');
 		// foreach ($data as $key => $value) {
 		// if ($value['price_sales']) {
-		// $allPrice+=$value['price_sales']*$cart[$value['id']][0];	
+		// $allPrice+=$value['price_sales']*$cart[$value['id']][0];
 		// }else{
-		// $allPrice+=$value['price_origin']*$cart[$value['id']][0];	
+		// $allPrice+=$value['price_origin']*$cart[$value['id']][0];
 		// }
 		// }
-      ?>	
+      ?>
      	<div class="row">
 			 <ol class="breadcrumb">
 				<li>
 					<a href="/project2/Home">Home</a>
 				</li>
 				<li class="active">Giỏ hàng</li>
-			</ol>	
+			</ol>
 	    </div>
 	    <div class="row">
-	    	<input type="hidden" id="allPrice" value="<?php echo $allPrice; ?>">  
+	    	<input type="hidden" id="allPrice" value="<?php echo $allPrice; ?>">
 	    </div>
 		<div class="row">
 			<div class="listProductBuy">
@@ -50,17 +50,17 @@
 					<div class="row title">
 						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 checkAll">
 					 		<div class="checkbox">
-							<?php 
+							<?php
 							// $sl_status=0;
 							// foreach ($cart as $key => $value) {
 							// 			$sl_status+=$value[1];
-							// 		}				
-							// if ($sl_status==count($data)) { 
+							// 		}
+							// if ($sl_status==count($data)) {
 							?>
-							<input type="checkbox" checked id="all_check">	
-							<?php //}else{ ?>	
-							<input type="checkbox" id="all_check"> 
-							<?php// } ?>	
+							<input type="checkbox" checked id="all_check">
+							<?php //}else{ ?>
+							<input type="checkbox" id="all_check">
+							<?php// } ?>
 							<label><b>Tất cả sản phẩm</b></label>
 							</div>
 					 	</div>
@@ -77,7 +77,7 @@
 				    		<div class="row">
 				    			<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 				    				<div class="checkbox">
-									<?php // if ($cart[$value['id']][1]) { ?>		<!-- status == 1 -->	
+									<?php // if ($cart[$value['id']][1]) { ?>		<!-- status == 1 -->
 										<input type="checkbox" checked class="check" value="<?php //echo $value['id'] ?>">
 									<?php //}else{ ?>
 										<input type="checkbox" class="check" value="<?php// echo $value['id'] ?>">
@@ -87,7 +87,7 @@
 				    			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 				    			 <div class="anh">
 					                  <a href="/project2/Home/singleProduct/<?php //echo $value['id_category'] ?>/<?php// echo $value['id'] ?>"><img width="100px" src="/project2/uploads/product/<?php //echo $value['image'] ?>" alt="Lỗi"></a>
-			                     </div>	
+			                     </div>
 				    			</div>
 				    		</div>
 				    		<div class="row nameAndRemove">
@@ -101,17 +101,17 @@
 				    			</div>
 				    		</div>
 				    	</div>
-				    	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 giaProduct">	
+				    	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 giaProduct">
 				    	 <?php //if ($value['price_sales']) { ?>  <!-- have price sales -->
 							    <small style="color:gray; text-decoration: line-through;">
 						        <?php //echo number_format($value['price_origin'],0,".", "."); ?>₫
-							    </small> 
+							    </small>
 							    <?php //echo number_format($value['price_sales'],0,".", "."); ?>₫
 							    <input type="hidden" class="pGoc" value="<?php// echo $value['price_origin'] ?>">
-							    <input type="hidden" class="pKM" value="<?php// echo $value['price_sales'] ?>">  
+							    <input type="hidden" class="pKM" value="<?php// echo $value['price_sales'] ?>">
 						   <?php //}else{ ?>
 							    <?php //echo number_format($value['price_origin'],0,".", "."); ?>₫
-							    <input type="hidden" class="pGoc" value="<?php //echo $value['price_origin'] ?>"> 
+							    <input type="hidden" class="pGoc" value="<?php //echo $value['price_origin'] ?>">
 							    <input type="hidden" class="pKM" value="<?php //echo $value['price_sales'] ?>">
 							    <?php// } ?>
 						</div>
@@ -127,11 +127,11 @@
 							 </div>
 				    	</div>
 				    </div>
-				   
-                   <?php// endforeach ?> 
+
+                   <?php// endforeach ?>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 inforChecked">
-				   <?php 
+				   <?php
 					$gia=0;
 					$num=0;
 					// foreach ($data as $key => $value) { // price of status ==1
@@ -144,9 +144,9 @@
 					// 	   $num+=$cart[$value['id']][0];
 					// 	}
 					// 	}
-					// $ship=($gia>=500000||$num==0)?0:50000;	
+					// $ship=($gia>=500000||$num==0)?0:50000;
 					// $priceEnd=$gia+$ship;
-					?>		
+					?>
 				   <h4>Thông tin đơn hàng</h4><hr>
 				   <h5>Tạm tính(<span id="slspCheck"><?php //echo $num ?></span> sản phẩm)
 			       <span id="giagoc">
@@ -171,7 +171,7 @@
  			<div class="row vien"></div>
  			<div class="row tieude">Thông tin người mua</div>
  			<div class="row" style="margin-left: -7px;">
- 		
+
  				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
  					<input type="text" disabled class="form-control" placeholder="Họ tên (bắt buộc)" id="hoten">
  					<input type="hidden" class="form-control" id="userId" value="<?php// echo $this->session->userdata('id')  ?>">
@@ -193,7 +193,7 @@
 			</div>
 			<div class="row ">
 			<button class="btn btn-info dathang">Đặt hàng ngay</button>
-			</div>	
+			</div>
  		</div>
  	</div>
  </div>
