@@ -20,7 +20,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand logo" href="/project2/Home"><img width="80px" src="/project2/<?php
+				<a class="navbar-brand logo" href="/project2/Home"><img width="80px" src="<?php
 				// echo $footer[0]['logo'] ?>" alt=""></a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->

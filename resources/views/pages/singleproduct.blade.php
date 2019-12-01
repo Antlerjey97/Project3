@@ -5,7 +5,7 @@
 	<title>Chi tiết sản phẩm</title>
 
 	@include('layout.link')
-	<link rel="stylesheet" href="/project2/lib/home/single.css">
+	<link rel="stylesheet" href="/lib/home/single.css">
 </head>
 <body>
 	@include('layout.header')
