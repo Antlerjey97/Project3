@@ -35,7 +35,7 @@
                     <ul>
                     <?php $j=0; ?>
                     <?php foreach ($listNews as $news): ?> 
-                        <?php if($j == 1) { ?>              s 
+                        <?php if($j == 1) { ?>           
                             <li>
                                 <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <img width="220px" class="anhtintucphu" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">

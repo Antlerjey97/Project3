@@ -30,7 +30,9 @@
 			 <div class="product">
 			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><img width="100%" src="/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi"></a>
 			 	<a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>"><div class="name"><?php echo $value['name'] ?></div></a>
+
 			 	<?php if($value['price_sales']){ ?>
+
 			 	<div class="prices">
 			 	<div class="span-group">
 			 		<span class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</span>
@@ -41,7 +43,8 @@
 			 		<div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>	
 			 	<?php } ?>	
 			 	<div class="note"><?php echo $value['promotion'] ?></div>
-			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>		
+			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>
+			 	<div><input class="id" type="text" hidden="{{$value['id']}}">{{$value['id']}}</div>		
 			 </div>		
 			</div> <!-- end 1sp -->
 		<?php $i++; ?>	
@@ -56,11 +59,16 @@
 		</div>
 	</div>
 	</div>
+
 </div> <!-- end showMore -->
 
 	@include('layout.footer')
 
 <script>
+
+
+
+
 	$(document).ready(function(){
 		$('.viewMore').click(function() {
 			var id_category='<?php echo $products[0]['id_category']; ?>';

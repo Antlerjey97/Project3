@@ -220,6 +220,7 @@
 			 	<div class="note"><?php //echo $value['promotion'] ?></div>
 			 	<div class="addToCart">
 			 		<button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button>
+			 		
 			 	</div>		
 			 </div>		
 			</div> <!-- end 1sp -->
