@@ -10,3 +10,24 @@
 <script type="text/javascript" src='/lib/home/addToCart.js'></script>
 <script type="text/javascript" src='/lib/home/up.js'></script>
 <base href="{{asset('')}}">
+
+
+<script>document.addEventListener("DOMContentLoaded",function(){
+
+		// console.log(JSON.parse(localStorage.getItem("cart")));
+	
+$('body').on('click','.giohang',function(){
+				console.log('helo');
+		console.log(JSON.parse(localStorage.cart));
+		           $.ajax({
+						url: 'pages/cart', 
+					    type: 'POST',  
+					    data: { 
+					    	dl:JSON.parse(localStorage.cart),_token: '{{ csrf_token() }}' 
+					    }
+					     
+					});
+});
+
+});
+</script>

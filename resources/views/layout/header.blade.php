@@ -45,7 +45,7 @@
 
 					<li><a href="pages/news">Tin tức<i class="icon glyphicon glyphicon-list-alt"></i></a></li>
 					<li class="action giohang">
-					 <a href="pages/cart">Giỏ hàng<i class="icon cart fas fa-project2ping-cart"></i><span class="quantity" id="sl"><?php 
+					 <a >Giỏ hàng<i class="icon cart fas fa-project2ping-cart shopcart"></i><span class="quantity" id="sl"><?php 
 					 //echo $quantity ?></span></a></li>
 					<?php //if ($this->session->has_userdata('fullname') && $this->session->has_userdata('password') && $this->session->has_userdata('email')) {?>
 					<li class="action" style="cursor: pointer;" id="changeInfo">
@@ -424,4 +424,8 @@ $('.changePass').click(function() {
 
 
 },false);
+
+
+
+
 </script>

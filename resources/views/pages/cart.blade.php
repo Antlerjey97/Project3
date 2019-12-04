@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Giỏ hàng</title>
     @include('layout.link')
-	<link rel="stylesheet" href="/project2/lib/home/cart.css">
-	<script src="/project2/lib/home/editQuantityCart.js"></script>
+	<link rel="stylesheet" href="/lib/home/cart.css">
+	<script src="/lib/home/editQuantityCart.js"></script>
 </head>
 <body>
     @include('layout.header')
@@ -13,6 +13,10 @@
  <div class="add"></div>
    <div class="listCart">
      <div class="container">
+
+  <?php  //$data = "<script>document.write(localStorage.getItem('cart'));</script>"; 
+
+     dd($data); ?>
      <?php //if ($data==NULL) { ?>
      <div class="container text-center empty ">
 	 <div class="row">
@@ -86,13 +90,13 @@
 				    			</div>
 				    			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 				    			 <div class="anh">
-					                  <a href="/project2/Home/singleProduct/<?php //echo $value['id_category'] ?>/<?php// echo $value['id'] ?>"><img width="100px" src="/project2/uploads/product/<?php //echo $value['image'] ?>" alt="Lỗi"></a>
+					                  <a href="/Home/singleProduct/<?php //echo $value['id_category'] ?>/<?php// echo $value['id'] ?>"><img width="100px" src="<?php //echo $value['image'] ?>" alt="Lỗi"></a>
 			                     </div>
 				    			</div>
 				    		</div>
 				    		<div class="row nameAndRemove">
 				    			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 tensp">
-										<a href="/project2/Home/singleProduct/<?php //echo $value['id_category'] ?>/<?php //echo $value['id'] ?>"><?php //echo $value['name'] ?></a>
+										<a href="/Home/singleProduct/<?php //echo $value['id_category'] ?>/<?php //echo $value['id'] ?>"><?php //echo $value['name'] ?></a>
 				    			</div>
 				    			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 xoa">
 				    				<button class="nutxoa" value="<?php //echo $value['id'] ?>">
@@ -199,6 +203,7 @@
  </div>
 <?php // } ?>
 @include('layout.footer')
+
 
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="_token" content="{{ csrf_token() }}">
 @include('layout.link')
 	<title>Trang web mua bán online</title>
 </head>

@@ -84,10 +84,28 @@ class PageController extends Controller
                             $listCmt=(array)$listCmt;
 
                         $spSame=product::where('id_category',$id)->get();
- return view('pages.singleproduct',['dl'=>$dl,'data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
+             return view('pages.singleproduct',['dl'=>$dl,'data'=>$data,'spSame'=>$spSame,'listCmt'=>$listCmt]);
                     }
 
-    public function getcart()
-    { return view('pages.cart');    
+    public function getcart(Request $request)
+    {
+        $data=$request->input('dl');
+     // dd($data);
+     //    return response()->json($data);
+
+     return view('pages.cart',['data'=>$data]);    
     }
-                }
+
+    public function postcart(Request $request)
+    {
+        $data =$request->input('dl');
+        // dd($data);
+        print_r($data);
+   
+        // dd($data);
+        return response()->json($data);
+
+        // return view('pages.cart' ,['data'=>$data]);
+    }
+
+}

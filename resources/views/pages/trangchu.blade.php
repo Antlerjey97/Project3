@@ -38,8 +38,6 @@
 			 	<? php } ?>	
 			 		
 			 		<div class="note"><?php  echo  $value['promotion'] ?></div>
-			 
-			 	
 			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>
 			 	<div class="new"><img src="/uploads/ImageBanner/New.png" alt=""></div>		
 			 </div>		

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<script>
+// ...
+</script>
 <head>
 	<meta charset="UTF-8">
 	<title>Danh sách sản phẩm</title>
@@ -44,7 +46,7 @@
 			 	<?php } ?>	
 			 	<div class="note"><?php echo $value['promotion'] ?></div>
 			 	<div class="addToCart"><button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button></div>
-			 	<div><input class="id" type="text" hidden="{{$value['id']}}">{{$value['id']}}</div>		
+			 
 			 </div>		
 			</div> <!-- end 1sp -->
 		<?php $i++; ?>	
@@ -59,6 +61,7 @@
 		</div>
 	</div>
 	</div>
+	
 
 </div> <!-- end showMore -->
 

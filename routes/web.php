@@ -123,6 +123,8 @@ Route::get('pages/newdetail/{id}','PageController@newdetail');
 
 Route::get('pages/singleProduct/{id}/{a}','PageController@singleProduct');
 Route::get('pages/cart','PageController@getcart');
+Route::get('pages/cart','PageController@getcart');
+Route::post('pages/cart','PageController@postcart');
 
 Route::post('pages/loadmore','Productmore@loadMore');
 Route::post('tintuc/loadmore','Tintucmore@loadMore');
