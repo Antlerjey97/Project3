@@ -128,3 +128,7 @@ Route::post('pages/cart','PageController@postcart');
 
 Route::post('pages/loadmore','Productmore@loadMore');
 Route::post('tintuc/loadmore','Tintucmore@loadMore');
+Route::post('pages/timkiem','PageController@Timkiem');
+Route::post('pages/timkiemajax','PageController@TimkiemAjax');
+Route::post('pages/signUp','PageController@signUp');
+Route::post('pages/createSession','PageController@createSession');

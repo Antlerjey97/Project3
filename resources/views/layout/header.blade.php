@@ -25,7 +25,9 @@
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<form class="navbar-form navbar-left" role="search" action="/project2/Home/Timkiem" method="POST">
+				<form class="navbar-form navbar-left" role="search" action="pages/timkiem" method="POST">
+					<input type="hidden" name="_Token" value="{{csrf_token()}}">
+               @csrf
 					<div class="form-group">
 						<input id="search_text" type="text" class="form-control" name="keySearch" placeholder="Tìm kiếm sản phẩm...">
 						<button><div class="iconSearch"><i class="fas fa-search"></i></div></button>
@@ -84,6 +86,8 @@
 <div class="dkyMember KHthi">
 	<div class="row"></div>
 	<div class="form_content">
+				<input type="hidden" name="_Token" value="{{csrf_token()}}">
+               @csrf
 		<div class="title">Đăng ký tài khoản</div>
 		<div class="closeDky"><i class="fas fa-times"></i></div>
 		<div class="row">
@@ -204,9 +208,9 @@ $('#search_text').keyup(function() {
 	if (key!='') {
 
 		$.ajax({
-			url: '/project2/Home/TimkiemAjax',
+			url: 'pages/timkiemajax',
 			type: 'POST',
-			data: {key: key}
+			data: {key: key ,_token: "{{ csrf_token() }}"}
 		})
 		.always(function(data) {
 			element.removeClass('KHthi');
@@ -255,25 +259,25 @@ $('.confirm').click(function() {
 		alert('Vui lòng nhập số điện thoại');
 	}else{
 		$.ajax({
-			url: '/project2/Home/signUp',
+			url: 'pages/signUp',
 			type: 'POST',
-			data: {email:email,password:password,fullname:fullname,username:username,phone:phone}
+			data: {email:email,password:password,fullname:fullname,username:username,phone:phone,"_token": "{{ csrf_token() }}"}
 		})
 		.always(function(data) {
-			x = data.indexOf(">");
-			data = data.slice(x+1, data.length);
+			// x = data.indexOf(">");
+			// data = data.slice(x+1, data.length);
 			data = JSON.parse(data);
 			idUser = data.idAcc;
 			if (data.status=='isset') {
 			 alert('Tài khoản đã tồn tại !');
 			}else{
 				$.ajax({
-					url: '/project2/Home/createSession',
+					url: 'pages/createSession',
 					type: 'POST',
-					data: {idUser:idUser,email:email,password:password,fullname:fullname,username:username,phone:phone}
+					data: {idUser:idUser,email:email,password:password,fullname:fullname,username:username,phone:phone,_token: "{{ csrf_token() }}" }
 				})
 				.always(function() {
-					location.href='/project2/Home';
+					location.href='pages';
 				});
 
 			}
