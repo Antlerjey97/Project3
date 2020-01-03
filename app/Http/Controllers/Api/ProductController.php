@@ -43,14 +43,9 @@ class ProductController extends Controller
 
 
         $product = product::find($id);
-        // $product = (array)$product;
-        // chuyển hết các cái object này thành array. t k nhớ cú pháp lắm. k đc thử search xem. t làm đã ok
+
         $promotion = promotion::all();
         $category = Category::all();
-        // $comt=$product->comment;
-        // $comt=comment::all();
-        //$comt=$product->comment;
-        // dd(array_value($product);
 
         $comt = DB::table('comment')
             ->select('comment.content', 'comment.id', 'comment.status', 'comment.time_created', 'comment.user_id',
@@ -59,14 +54,7 @@ class ProductController extends Controller
             ->leftjoin('users', 'users.id', '=', 'comment.user_id')
             ->where('product_id', $id)
             ->get();
-        // nãy m tìm comment của th product không có comment nào. Query trên mk bảng product nên k cần join
         $comt = (array)$comt;
-        // dd($comt);
-        // var_dump(json_decode($comt));
-        //     //     echo "<pre>";
-        //       dd($comt);
-        //     echo "</pre>";
-
         return view('admin.product.edit',
             ['product' => $product, 'promotion' => $promotion, 'category' => $category, 'comt' => $comt]);
 
