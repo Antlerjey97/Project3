@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class order extends Model
+class Order extends Model
 {
     //
     protected $table = "order";
@@ -16,17 +16,17 @@ class order extends Model
 
     public function oder_product()
     {
-        return $this->hasMany('App\oder_product', 'order_id', 'id');
+        return $this->hasMany('App\Oder_product', 'order_id', 'id');
     }
 
     public function bill()
     {
-        return $this->hasMany('App\bill', 'id_order', 'id');
+        return $this->hasMany('App\Bill', 'id_order', 'id');
     }
 
     public function product()
     {
-        return $this->hasManyThrough('App\product', 'App\order', 'order_id', 'product_id', 'id');
+        return $this->hasManyThrough('App\Product', 'App\Order', 'order_id', 'product_id', 'id');
     }
 
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class comment extends Model
+class Comment extends Model
 {
     //
     protected $table = "comment";
@@ -16,6 +16,6 @@ class comment extends Model
 
     public function product()
     {
-        return $this->belongsto('App\product', 'product_id', 'id');
+        return $this->belongsto('App\Product', 'product_id', 'id');
     }
 }

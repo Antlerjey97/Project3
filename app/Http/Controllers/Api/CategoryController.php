@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\category;
+use App\Category;
 
-class categoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class categoryController extends Controller
     public function index()
     {
         //
-        $category = category::all();
+        $category = Category::all();
         return view('admin.category.list', ['category' => $category]);
     }
 
@@ -29,7 +29,7 @@ class categoryController extends Controller
     public function getedit($id)
     {
 
-        $category = category::find($id);
+        $category = Category::find($id);
         return view('admin.category.edit', ['category' => $category]);
 
     }
@@ -42,7 +42,7 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new category();
+        $category = new Category();
         $category->name = $request->name;
         $category->status = $request->status;
         $category->sort = $request->sort;
@@ -73,7 +73,7 @@ class categoryController extends Controller
     {
         //
 
-        $category = category::find($id);
+        $category = Category::find($id);
         $this->validate($request, [
                 'name' => 'required|unique:category,name|min:3|max:100'
             ]
@@ -99,7 +99,7 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = category::find($id);
+        $category = Category::find($id);
         $category->delete();
         return redirect('admin/category/danhsach')->with('thongbao', 'Deleted Successful');
     }

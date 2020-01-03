@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\product;
 use App\slide;
-use App\category;
+use App\Category;
 use App\info_company;
-use App\comment;
-use App\banner;
+use App\Comment;
+use App\Banner;
 use App\User;
 use App\promotionNews;
 use Illuminate\Support\Facades\Auth;
@@ -41,14 +41,14 @@ class PageController extends Controller
         $new = (array)$new;
         view()->share('product', $new);
         view()->share('new', $new);
-        $banner = banner::all();
+        $banner = Banner::all();
         view()->share('banner', $banner);
-        $category = category::all();
+        $category = Category::all();
         view()->share('header', $category);
 
         $footer = info_company::all();
         view()->share('footer', $footer);
-       
+
     }
 
     public function trangchu()
@@ -106,7 +106,7 @@ class PageController extends Controller
     public function getcart(Request $request)
     {
         $data = $request->input('dl');
-     
+
 
         return view('pages.cart', ['data' => $data]);
     }
@@ -118,10 +118,10 @@ class PageController extends Controller
         $cart = session()->put('cart', $data);
         print_r($data);
         dd($cart);
-   
+
         print_r($data);
 
-     
+
         return response()->json($data);
 
     }
@@ -135,7 +135,7 @@ class PageController extends Controller
             ->leftjoin('promotion', 'promotion.id', '=', 'products.id_promotion')
             ->where('products.name', 'like', $keySearch . '%')
             ->get()->toArray();
-   
+
         return view('pages.resultsearch', ['data' => $data, 'keySearch' => $keySearch]);
     }
 

@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class bill extends Model
+class Bill extends Model
 {
     //
     protected $table = "bill";
 
     public function order()
     {
-        return $this->belongsTo('App\order', 'id_order', 'id');
+        return $this->belongsTo('App\Order', 'id_order', 'id');
     }
 
     public function product()
     {
-        return $this->hasMany('App\product', 'id_product', 'id');
+        return $this->hasMany('App\Product', 'id_product', 'id');
     }
 }

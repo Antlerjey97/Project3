@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\banner;
+use App\Banner;
 
-class bannerController extends Controller
+class BannerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +16,14 @@ class bannerController extends Controller
     public function index()
     {
         //
-        $quangcao = banner::all();
-        $quangcao = banner::paginate(4);
+        $quangcao = Banner::all();
+        $quangcao = Banner::paginate(4);
         return view('admin.banner.list', ['quangcao' => $quangcao]);
     }
 
     public function getedit($id)
     {
-        $quangcao = banner::find($id);
+        $quangcao = Banner::find($id);
 
         return view('admin.banner.edit', ['quangcao' => $quangcao]);
     }
@@ -42,7 +42,7 @@ class bannerController extends Controller
      */
     public function store(Request $request)
     {
-        $banner = new banner();
+        $banner = new Banner();
         $banner->name = $request->name;
         $banner->image = $request->image->getClientOriginalName();
         $banner->content = $request->content;
@@ -76,7 +76,7 @@ class bannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $quangcao = banner::find($id);
+        $quangcao = Banner::find($id);
         $quangcao->name = $request->name;
         $quangcao->image = $request->image->getClientOriginalName();
         $quangcao->content = $request->content;
@@ -116,7 +116,7 @@ class bannerController extends Controller
      */
     public function destroy($id)
     {
-        $banner = banner::find($id);
+        $banner = Banner::find($id);
         $banner->delete();
         return redirect('admin/banner/danhsach')->with('thongbao', 'Deleted Succesful');
     }

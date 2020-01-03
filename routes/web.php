@@ -32,54 +32,51 @@ Route::get('test', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'banner'], function () {
-        route::get('list', 'Api\bannerController@index');
-        route::get('edit/{id}', 'Api\bannerController@getedit');
-        route::post('edit/{id}', 'Api\bannerController@update');
-        route::get('add', 'Api\bannerController@add');
-        route::post('add', 'Api\bannerController@store');
-        route::get('delete/{id}', 'Api\bannerController@destroy');
+        route::get('list', 'Api\BannerController@index');
+        route::get('edit/{id}', 'Api\BannerController@getedit');
+        route::post('edit/{id}', 'Api\BannerController@update');
+        route::get('add', 'Api\BannerController@add');
+        route::post('add', 'Api\BannerController@store');
+        route::get('delete/{id}', 'Api\BannerController@destroy');
     });
     Route::group(['prefix' => 'category'], function () {
-        route::get('list', 'Api\categoryController@index');
-        route::get('delete/{id}', 'Api\categoryController@destroy');
-        route::get('add', 'Api\categoryController@add');
-        route::post('add', 'Api\categoryController@store');
-        route::get('edit/{id}', 'Api\categoryController@getedit');
-        route::post('edit/{id}', 'Api\categoryController@update');
+        route::get('list', 'Api\CategoryController@index');
+        route::get('delete/{id}', 'Api\CategoryController@destroy');
+        route::get('add', 'Api\CategoryController@add');
+        route::post('add', 'Api\CategoryController@store');
+        route::get('edit/{id}', 'Api\CategoryController@getedit');
+        route::post('edit/{id}', 'Api\CategoryController@update');
     });
     Route::group(['prefix' => 'Product'], function () {
         route::get('list', 'Api\ProductController@index');
         route::get('edit/{id}', 'Api\ProductController@getedit');
         route::post('edit/{id}', 'Api\ProductController@update');
-        route::get('delete/{id}', 'Api\productController@destroy');
-        route::get('add', 'Api\productController@add');
-        route::post('add', 'Api\productController@store');
+        route::get('delete/{id}', 'Api\ProductController@destroy');
+        route::get('add', 'Api\ProductController@add');
+        route::post('add', 'Api\ProductController@store');
     });
     Route::group(['prefix' => 'order'], function () {
-        route::get('list', 'Api\orderController@index');
-        route::get('detail/{id}', 'Api\orderController@show');
-        route::get('edit', 'bannerController@getedit');
-        route::get('delete', 'bannerController@getxoa');
-        route::get('add', 'bannerController@getthem');
+        route::get('list', 'Api\OrderController@index');
+        route::get('detail/{id}', 'Api\OrderController@show');
     });
     Route::group(['prefix' => 'inforcompany'], function () {
-        route::get('list', 'Api\inforcompanyController@index');
-        route::get('edit', 'Api\inforcompanyController@edit');
-        route::get('add', 'Api\inforcompanyController@getthem');
+        route::get('list', 'Api\InforcompanyController@index');
+        route::get('edit', 'Api\InforcompanyController@edit');
+        route::get('add', 'Api\InforcompanyController@getthem');
     });
     Route::group(['prefix' => 'promotion'], function () {
-        route::get('list', 'Api\promotionController@index');
-        route::get('edit/{id}', 'Api\promotionController@getedit');
-        route::post('edit/{id}', 'Api\promotionController@update');
-        route::get('delete/{id}', 'Api\promotionController@destroy');
-        route::get('add', 'Api\promotionController@add');
-        route::post('add', 'Api\promotionController@store');
+        route::get('list', 'Api\PromotionController@index');
+        route::get('edit/{id}', 'Api\PromotionController@getedit');
+        route::post('edit/{id}', 'Api\PromotionController@update');
+        route::get('delete/{id}', 'Api\PromotionController@destroy');
+        route::get('add', 'Api\PromotionController@add');
+        route::post('add', 'Api\PromotionController@store');
     });
-    Route::group(['prefix' => 'promotionNews'], function () {
-        route::get('list', 'Api\promotionNewsController@index');
-        route::get('edit/{id}', 'Api\promotionNewsController@getedit');
-        route::post('edit/{id}', 'Api\promotionNewsController@update');
-        route::get('add', 'Api\promotionNewsController@add');
+    Route::group(['prefix' => 'PromotionNews'], function () {
+        route::get('list', 'Api\PromotionNewsController@index');
+        route::get('edit/{id}', 'Api\PromotionNewsController@getedit');
+        route::post('edit/{id}', 'Api\PromotionNewsController@update');
+        route::get('add', 'Api\PromotionNewsController@add');
     });
     Route::group(['prefix' => 'user'], function () {
         route::get('list', 'Api\userController@index');
@@ -99,8 +96,8 @@ Route::group(['prefix' => 'pages'], function () {
     Route::get('cart', 'PageController@getcart');
     Route::get('cart', 'PageController@getcart');
     Route::post('cart', 'PageController@postcart');
-    Route::post('loadmore', 'Productmore@loadMore');
-    Route::post('loadmore', 'Tintucmore@loadMore');
+    Route::post('loadmore', 'ProductmoreController@loadMore');
+    Route::post('loadmore', 'TintucmoreController@loadMore');
     Route::post('timkiem', 'PageController@Timkiem');
     Route::post('timkiemajax', 'PageController@TimkiemAjax');
     Route::post('signUp', 'PageController@signUp');

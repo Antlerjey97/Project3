@@ -6,7 +6,7 @@ use App\promotionNews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class Tintucmore extends Controller
+class TintucmoreController extends Controller
 {
 
 

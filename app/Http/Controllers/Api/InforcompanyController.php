@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\info_company;
 
-class inforcompanyController extends Controller
+class InforcompanyController extends Controller
 {
     /**
      * Display a listing of the resource.

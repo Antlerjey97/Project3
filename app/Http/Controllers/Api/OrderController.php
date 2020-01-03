@@ -4,56 +4,26 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\order;
 use App\User;
-use Illuminate\Support\Facades\Auth;
+
+use App\product;
 use Illuminate\Support\Facades\DB;
 
-class userController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index()
     {
-
-        $User = User::all();
-        return view('admin.user.list', ['User' => $User]);
-    }
-
-    public function add()
-    {
-        return view('admin.user.create');
-    }
-
-
-    public function getdangnhapadmin()
-    {
-        return view('admin.login');
-
-    }
-
-    public function postdangnhapadmin(Request $request)
-    {
-
-
-        $email = $request['email'];
-        $password = $request['password'];
-
-
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1]))
-            return view('admin/layout/index');
-
-        else return view('admin/login');
-    }
-
-    public function dangxuat()
-    {
-        Auth::logout();
-        return view('admin/login');
+        //
+        $order = order::all();
+        $users = User::all();
+        $order = order::paginate(5);
+        return view('admin.order.list', ['order' => $order, 'users' => $users]);
     }
 
     /**
@@ -75,7 +45,19 @@ class userController extends Controller
      */
     public function show($id)
     {
-        //
+        $list = order::find($id);
+        $listOrder = DB::table('products')
+            ->select('products.name', 'products.image', 'products.quantity', 'products.price_sales',
+                'products.price_origin', 'products.id_promotion', 'promotion.name')
+            ->from('order_product')
+            ->where('order_id', $id)
+            ->leftjoin('products', 'order_product.product_id', '=', 'products.id')
+            ->leftjoin('promotion', 'promotion.id', '=', 'products.id_promotion')
+            ->get();
+
+
+        return view('admin.order.viewDetail', ['listOrder' => $listOrder, 'list' => $list]);
+
     }
 
     /**

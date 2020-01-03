@@ -4,12 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class banner extends Model
+class PromotionNews extends Model
 {
     //
-
-
     public $timestamps = false;
-
-    protected $table = "banner";
+    protected $table = "promotion_news";
 }

@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\promotion;
-use App\category;
-use App\comment;
+use App\Category;
+use App\Comment;
 use App\product;
 use App\User;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +25,7 @@ class ProductController extends Controller
 
         //
         $product = product::all();
-        $category = category::all();
+        $category = Category::all();
         $product = product::paginate(5);
         return view('admin.product.list', ['product' => $product, 'category' => $category]);
     }
@@ -34,7 +34,7 @@ class ProductController extends Controller
     {
         $promotion = promotion::all();
 
-        $category = category::all();
+        $category = Category::all();
         return view('admin.product.add', ['promotion' => $promotion, 'category' => $category]);
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         // $product = (array)$product;
         // chuyển hết các cái object này thành array. t k nhớ cú pháp lắm. k đc thử search xem. t làm đã ok
         $promotion = promotion::all();
-        $category = category::all();
+        $category = Category::all();
         // $comt=$product->comment;
         // $comt=comment::all();
         //$comt=$product->comment;

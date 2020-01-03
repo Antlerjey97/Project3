@@ -42,11 +42,11 @@ class User extends Authenticatable
 
     public function comment()
     {
-        return $this->hasmany('App\comment', 'user_id', 'id');
+        return $this->hasmany('App\Comment', 'user_id', 'id');
     }
 
     public function order()
     {
-        return $this->hasOne('App\order', 'user_id', 'id');
+        return $this->hasOne('App\Order', 'user_id', 'id');
     }
 }

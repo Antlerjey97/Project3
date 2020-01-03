@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\promotionNews;
 
-class promotionNewsController extends Controller
+class PromotionNewsController extends Controller
 {
     /**
      * Display a listing of the resource.
