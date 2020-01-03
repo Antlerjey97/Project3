@@ -14,21 +14,23 @@
 
 <!-- DataTables JavaScript -->
 <script src="lib/admin/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
-<script src="lib/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script> 
+<script
+    src="lib/admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 
-<script type="text/javascript" language="javascript" src="lib/admin/ckeditor/ckeditor.js" ></script>
+<script type="text/javascript" language="javascript" src="lib/admin/ckeditor/ckeditor.js"></script>
 
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
-$(document).ready(function() {
-    $('#dataTables-example').DataTable({
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
             responsive: false
+        });
     });
-});
 </script>
 </body>
 

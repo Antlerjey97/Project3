@@ -7,7 +7,7 @@
     <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
     <meta name="author" content="">
     <title>Project III</title>
-        <base href="{{asset('')}}">
+    <base href="{{asset('')}}">
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,7 +21,8 @@
     <link href="admin_asset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- DataTables CSS -->
-    <link href="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css"
+          rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
@@ -29,103 +30,104 @@
 
 <body>
 
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Navigation -->
-        @include('admin.layout.header')
-        @yield('content')
+    <!-- Navigation -->
+    @include('admin.layout.header')
+    @yield('content')
 
-        
-        {{-- <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Product
-                            <small>Edit</small>
-                        </h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                    <div class="col-lg-7" style="padding-bottom:120px">
-                        <form action="" method="POST">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" name="txtName" placeholder="Please Enter Username" />
-                            </div>
-                            <div class="form-group">
-                                <label>Price</label>
-                                <input class="form-control" name="txtPrice" placeholder="Please Enter Password" />
-                            </div>
-                            <div class="form-group">
-                                <label>Intro</label>
-                                <textarea class="form-control" rows="3" name="txtIntro"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Content</label>
-                                <textarea class="form-control" rows="3" name="txtContent"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Images</label>
-                                <input type="file" name="fImages">
-                            </div>
-                            <div class="form-group">
-                                <label>Product Keywords</label>
-                                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
-                            </div>
-                            <div class="form-group">
-                                <label>Product Description</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Product Status</label>
-                                <label class="radio-inline">
-                                    <input name="rdoStatus" value="1" checked="" type="radio">Visible
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="rdoStatus" value="2" type="radio">Invisible
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Product Edit</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
-                        <form>
-                    </div>
+
+    {{-- <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Product
+                        <small>Edit</small>
+                    </h1>
                 </div>
-                <!-- /.row -->
+                <!-- /.col-lg-12 -->
+                <div class="col-lg-7" style="padding-bottom:120px">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" name="txtName" placeholder="Please Enter Username" />
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input class="form-control" name="txtPrice" placeholder="Please Enter Password" />
+                        </div>
+                        <div class="form-group">
+                            <label>Intro</label>
+                            <textarea class="form-control" rows="3" name="txtIntro"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            <textarea class="form-control" rows="3" name="txtContent"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Images</label>
+                            <input type="file" name="fImages">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Keywords</label>
+                            <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
+                        </div>
+                        <div class="form-group">
+                            <label>Product Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Status</label>
+                            <label class="radio-inline">
+                                <input name="rdoStatus" value="1" checked="" type="radio">Visible
+                            </label>
+                            <label class="radio-inline">
+                                <input name="rdoStatus" value="2" type="radio">Invisible
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Product Edit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                    <form>
+                </div>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper --> --}}
-
+        <!-- /.container-fluid -->
     </div>
-    <!-- /#wrapper -->
+    <!-- /#page-wrapper --> --}}
 
-    <!-- jQuery -->
-    <script src="admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
+</div>
+<!-- /#wrapper -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="admin_asset/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="admin_asset/dist/js/sb-admin-2.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="admin_asset/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
-    <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="admin_asset/dist/js/sb-admin-2.js"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
+<!-- DataTables JavaScript -->
+<script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+<script
+    src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function () {
         $('#dataTables-example').DataTable({
-                responsive: true
+            responsive: true
         });
     });
-    </script>
-    <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
+</script>
+<script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js"></script>
 
-    
-    @yield('script')
+
+@yield('script')
 </body>
 
 </html>

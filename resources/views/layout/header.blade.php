@@ -34,32 +34,33 @@
 					</div>
 				</form>
 				<ul class="nav navbar-nav navbar-right">
-					
+
 					<li><a href="pages/showproduct/<?php echo  $header[0]['id'] ?>"><?php
 					 echo $header[0]['name'] ?>
 					<i class="icon glyphicon glyphicon-phone"></i></a></li>
-					<li><a href="pages/showproduct/<?php echo  $header[1]['id'] ?>"><?php 
+					<li><a href="pages/showproduct/<?php echo  $header[1]['id'] ?>"><?php
 					echo $header[1]['name'] ?><i class="icon fas fa-tablet-alt"></i></a></li>
-					<li><a href="pages/showproduct/<?php echo  $header[2]['id'] ?>"><?php 
+					<li><a href="pages/showproduct/<?php echo  $header[2]['id'] ?>"><?php
 					echo $header[2]['name'] ?><i class="icon fas fa-laptop"></i></a></li>
 					<li><a href="pages/showproduct/<?php echo  $header[3]['id'] ?>"><?php
 					 echo $header[3]['name'] ?><i class="icon fas fa-headphones"></i></a></li>
 
 					<li><a href="pages/news">Tin tức<i class="icon glyphicon glyphicon-list-alt"></i></a></li>
 					<li class="action giohang">
-					 <a >Giỏ hàng<i class="icon cart fas fa-project2ping-cart shopcart"></i><span class="quantity" id="sl"><?php 
+					 <a >Giỏ hàng<i class="icon cart fas fa-project2ping-cart shopcart"></i><span class="quantity" id="sl"><?php
 					 //echo $quantity ?></span></a></li>
-					<?php //if ($this->session->has_userdata('fullname') && $this->session->has_userdata('password') && $this->session->has_userdata('email')) {?>
+                    <?php if (session()->has('fullname') && session()->has('password') && session()->has('email')) {?>
 					<li class="action" style="cursor: pointer;" id="changeInfo">
 						<a>
-							<?php //echo $this->session->userdata('fullname') ?>
+                            <?php dd(session()->get('fullname')); ?>
+                            <?php echo session()->get('fullname') ?>
 						</a>
 					</li>
 					<li class="action"><a href="/project2/Home/logout">Thoát</a></li>
-					<?php // } else {?>
+                    <?php  } else {?>
 					<li class="action"><a class="dky" >Đăng ký</a></li>
 					<li class="action"><a class="dNhap" >Đăng nhập</a></li>
-					<?php// }?>
+                    <?php }?>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div>
@@ -103,7 +104,7 @@
 			<div class="form-group">
 				<label for="">Số điện thoại</label>
 				<input type="text" class="form-control" id="phone" placeholder="Số điện thoại" required>
-			</div>	
+			</div>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<div class="form-group">
@@ -120,8 +121,8 @@
 			</div>
 			</div>
 		</div>
-			
-			
+
+
 			<button type="submit" class="btn btn-primary confirm">Đăng ký</button>
 	</div>
 </div>
@@ -141,7 +142,7 @@
 			<div class="form-group">
 				<label for="">Số điện thoại</label>
 				<input type="text" class="form-control" id="phoneChange" placeholder="Số điện thoại" required>
-			</div>	
+			</div>
 			</div>
 			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<div class="form-group">
@@ -316,18 +317,17 @@ $('.login').click(function() {
   	alert('Vui lòng nhập đầy đủ thông tin ');
   }else{
   	$.ajax({
-  		url: '/project2/Home/login',
+        url: 'pages/login',
   		type: 'POST',
-  		data: {username: username,password:password}
+        data: {username: username, password: password, "_token": "{{ csrf_token() }}"}
   	})
   	.always(function(data) {
-  		x = data.indexOf(">");
-		data = data.slice(x+1, data.length);
+        //
   		data = JSON.parse(data);
   		if (data=='notfound') {
   			alert('Tài khoản hoặc mật khẩu không đúng');
   		}else{
-  			location.href='/project2/Home';
+            location.href = 'pages';
   		}
   	});
 

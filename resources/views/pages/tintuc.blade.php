@@ -1,111 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Tin tức công nghệ</title>
+    <meta charset="UTF-8">
+    <title>Tin tức công nghệ</title>
     @include('layout.link')
 </head>
 <body>
-    @include('layout.header')
-    <!-- Page Content -->
-    <div style="padding-top: 100px;" class="container">
-        <?php if (!count($listNews)): ?>
-            <div class="alert alert-info text-center" style="margin-top: 100px;margin-bottom: 100px;">
-              <div class="title">Không có bài viết nào.</div>
-            </div>
-        <?php else: ?>
-       
-        <div class="row firstRow">
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div class="row">
-                    <?php $i=0; ?>
-                    <?php foreach ($listNews as $news): ?> 
-            	    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tintuc_newest">
-                		<a href="pages/newdetail/<?php echo $news['id'] ?>">
-                			<img width="457px" class="anhtintucmoi" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
-                			<h3 class="title"><?php echo $news['title'] ?></h3>
-                			<p class="tomtat"><?php echo $news['summary'] ?></p>
-                		</a>
-                	</div>
-                    <?php $i++; ?>
-                    <?php if($i>0) break; ?>  
-                    <?php endforeach ?>
+@include('layout.header')
+<!-- Page Content -->
+<div style="padding-top: 100px;" class="container">
+    <?php if (!count($listNews)): ?>
+    <div class="alert alert-info text-center" style="margin-top: 100px;margin-bottom: 100px;">
+        <div class="title">Không có bài viết nào.</div>
+    </div>
+    <?php else: ?>
 
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tintuc_phu">
+    <div class="row firstRow">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">
+                <?php $i = 0; ?>
+                <?php foreach ($listNews as $news): ?>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 tintuc_newest">
+                    <a href="pages/newdetail/<?php echo $news['id'] ?>">
+                        <img width="457px" class="anhtintucmoi"
+                             src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
+                        <h3 class="title"><?php echo $news['title'] ?></h3>
+                        <p class="tomtat"><?php echo $news['summary'] ?></p>
+                    </a>
+                </div>
+                <?php $i++; ?>
+                <?php if ($i > 0) break; ?>
+                <?php endforeach ?>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tintuc_phu">
                     <ul>
-                    <?php $j=0; ?>
-                    <?php foreach ($listNews as $news): ?> 
-                        <?php if($j == 1) { ?>           
-                            <li>
-                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
-                                    <img width="220px" class="anhtintucphu" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
-                                    <h4 class="title"><?php echo $news['title'] ?></h4>
-                                </a>            
-                            </li>
-                        <?php } ?>             
+                        <?php $j = 0; ?>
+                        <?php foreach ($listNews as $news): ?>
+                        <?php if($j == 1) { ?>
+                        <li>
+                            <a href="pages/newdetail/<?php echo $news['id'] ?>">
+                                <img width="220px" class="anhtintucphu"
+                                     src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="">
+                                <h4 class="title"><?php echo $news['title'] ?></h4>
+                            </a>
+                        </li>
+                        <?php } ?>
                         <?php if(($j > 1) && ($j < 4)){ ?>
-                            <hr>
-                            <li>
-                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
-                                    <h4 class="title"><?php echo $news['title'] ?></h4>
-                                </a>
-                            </li>
+                        <hr>
+                        <li>
+                            <a href="pages/newdetail/<?php echo $news['id'] ?>">
+                                <h4 class="title"><?php echo $news['title'] ?></h4>
+                            </a>
+                        </li>
                         <?php } ?>
                         <?php $j++; ?>
-                    <?php endforeach ?>
+                        <?php endforeach ?>
                     </ul>
-                    </div>
                 </div>
+            </div>
 
-                <div class="row">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tintuc_older">
-                <hr>
-                <ul class="listTintuc">
-                    <?php $x=0; ?>
-                    <?php foreach ($listNews as $news): ?> 
-                        <?php if($x > 3 && $x < 9){ ?>           
-                            <li>
-                                <a href="pages/newdetail/<?php echo $news['id'] ?>">
+                    <hr>
+                    <ul class="listTintuc">
+                        <?php $x = 0; ?>
+                        <?php foreach ($listNews as $news): ?>
+                        <?php if($x > 3 && $x < 9){ ?>
+                        <li>
+                            <a href="pages/newdetail/<?php echo $news['id'] ?>">
                                     <span class="row">
                                         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                            <img width="200px" src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt="" class="anhtintuccu">
+                                            <img width="200px"
+                                                 src="/uploads/ImagePromotionNews/<?php echo $news['image'] ?>" alt=""
+                                                 class="anhtintuccu">
                                         </div>
                                         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                                             <h3 class="title"><?php echo $news['title'] ?></h3>
                                             <p class="tomtat"><?php echo $news['summary'] ?></p>
-                                            <p class="time_created"><?php echo date('d/m/Y H:i:s A', $news['time_created']) ?></p>
+                                            <p class="time_created"><?php echo date('d/m/Y H:i:s A',
+                                                    $news['time_created']) ?></p>
                                         </div>
                                     </span>
-                                </a>  
-                                <hr>                    
-                            </li>
+                            </a>
+                            <hr>
+                        </li>
                         <?php } ?>
                         <?php $x++; ?>
-                    <?php endforeach ?>
-                </ul>
-                
-                <input type="hidden" id="sltt" value="9" >
-                <div class="row">
-                    <div class="viewMore">
-                        <b class="btn btn-danger">Xem thêm tin tức </b>
+                        <?php endforeach ?>
+                    </ul>
+
+                    <input type="hidden" id="sltt" value="9">
+                    <div class="row">
+                        <div class="viewMore">
+                            <b class="btn btn-danger">Xem thêm tin tức </b>
+                        </div>
                     </div>
                 </div>
-                </div>
-                </div>
             </div>
+        </div>
 
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tintuc_khuyenmai">
-                <div class="titleNewProduct">Sản phẩm mới</div>
-                <?php foreach ($product as  $val): ?>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 tintuc_khuyenmai">
+            <div class="titleNewProduct">Sản phẩm mới</div>
+            <?php foreach ($product as  $val): ?>
 
 
-                <?php if($i==8) break; ?>  
-                <?php foreach ($val as $value):
-                        $value=(array)$value;
-                 ?>
-                     
-                
-                <div class="product">
+            <?php if ($i == 8) break; ?>
+            <?php foreach ($val as $value):
+            $value = (array)$value;
+            ?>
+
+
+            <div class="product">
                 <a href="pages/singleProduct/<?php echo $value['id_category'] ?>/<?php echo $value['id'] ?>">
                     <img width="100%" src="/uploads/product/<?php echo $value['image'] ?>" alt="Lỗi">
                 </a>
@@ -115,61 +120,62 @@
                 <?php if($value['price_sales']){ ?>
                 <div class="prices">
                     <div class="span-group">
-                        <span class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</span>
-                        <span class="priceSale"><?php echo number_format($value['price_sales'],0,".", "."); ?> ₫</span>
+                        <span class="price"><?php echo number_format($value['price_origin'], 0, ".", "."); ?> ₫</span>
+                        <span class="priceSale"><?php echo number_format($value['price_sales'], 0, ".",
+                                "."); ?> ₫</span>
                     </div>
                 </div>
                 <?php }else{ ?>
-                    <div class="price"><?php echo number_format($value['price_origin'],0,".", "."); ?> ₫</div>  
-                <?php } ?>  
+                <div class="price"><?php echo number_format($value['price_origin'], 0, ".", "."); ?> ₫</div>
+                <?php } ?>
                 <div class="note"><?php echo $value['promotion'] ?></div>
                 <div class="addToCart">
                     <button class="btn btn-danger" value="<?php echo $value['id'] ?>">Thêm vào giỏ hàng</button>
-                </div>      
-             </div>     
-            <?php $i++; ?>   
-              <?php endforeach ?>
+                </div>
+            </div>
+            <?php $i++; ?>
             <?php endforeach ?>
-            </div>
-
-            </div>
-
-         <?php endif ?>
+            <?php endforeach ?>
+        </div>
 
     </div>
-    <!-- end Page Content -->
-    @include('layout.footer')
+
+    <?php endif ?>
+
+</div>
+<!-- end Page Content -->
+@include('layout.footer')
 
 <script>
-	$(document).ready(function(){
-		$('.viewMore').click(function() {
-				//lấy số lượng tin tức hiện tại
-				var sl = $('#sltt').val();
-				sl=parseInt(sl);
-				$('#sltt').val(sl+5);
-				$.ajax({
-					url: 'tintuc/loadmore',
-					type: 'POST',
-					data: {offset:sl,_token: "{{ csrf_token() }}"}
-				})
-				.done(function() {
-				})
-				.fail(function() {
-				})
-				.always(function(data) {
+    $(document).ready(function () {
+        $('.viewMore').click(function () {
+            //lấy số lượng tin tức hiện tại
+            var sl = $('#sltt').val();
+            sl = parseInt(sl);
+            $('#sltt').val(sl + 5);
+            $.ajax({
+                url: 'tintuc/loadmore',
+                type: 'POST',
+                data: {offset: sl, _token: "{{ csrf_token() }}"}
+            })
+                .done(function () {
+                })
+                .fail(function () {
+                })
+                .always(function (data) {
                     // x = data.indexOf(">");
                     // data = data.slice(x+1, data.length);
 
                     console.log(data);
                     data = JSON.parse(data)
-					if (data.status !='NULL') {
-						$('.listTintuc').append(data.data);
-					}else{
-						$('.viewMore').html('<b class="endProduct" >Đã hết Tin tức </b>');
-					}
-				});
-			});
-	     });
+                    if (data.status != 'NULL') {
+                        $('.listTintuc').append(data.data);
+                    } else {
+                        $('.viewMore').html('<b class="endProduct" >Đã hết Tin tức </b>');
+                    }
+                });
+        });
+    });
 </script>
 </body>
 </html>

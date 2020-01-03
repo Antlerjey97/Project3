@@ -14,11 +14,12 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
- 
-         function __construct(){
-    	 if(Auth::check()){
-             view()->share('admin_login',Auth::user());
-                 }
+
+    function __construct()
+    {
+        if (Auth::check()) {
+            view()->share('admin_login', Auth::user());
+        }
 
     }
 }

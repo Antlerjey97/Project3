@@ -34,16 +34,19 @@ class User extends Authenticatable
      * @var array
      */
 
-     public $timestamps= false;
-    protected $table ="users";
+    public $timestamps = false;
+    protected $table = "users";
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function comment(){
-        return $this->hasmany('App\comment','user_id','id');
+
+    public function comment()
+    {
+        return $this->hasmany('App\comment', 'user_id', 'id');
     }
 
-    public function order(){
-        return $this->hasOne('App\order','user_id','id');
+    public function order()
+    {
+        return $this->hasOne('App\order', 'user_id', 'id');
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 class userController extends Controller
 {
     /**
@@ -16,47 +17,49 @@ class userController extends Controller
      */
 
 
-                 
-
-    
     public function index()
     {
-        
-        $User=User::all();
-        return view('admin.user.list',['User'=>$User]);
+
+        $User = User::all();
+        return view('admin.user.list', ['User' => $User]);
     }
-    public function add(){
+
+    public function add()
+    {
         return view('admin.user.create');
     }
 
-  
 
-    public function getdangnhapadmin(){
+    public function getdangnhapadmin()
+    {
         return view('admin.login');
 
     }
-    public function postdangnhapadmin(Request $request){
-         
-         
 
-             $email=  $request['email'];
-            $password= $request['password'];
+    public function postdangnhapadmin(Request $request)
+    {
 
-         
-        if(Auth::attempt(['email'=>$email,'password'=>$password,'status' => 1]))
-                return view('admin/layout/index');
+
+        $email = $request['email'];
+        $password = $request['password'];
+
+
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'status' => 1]))
+            return view('admin/layout/index');
 
         else return view('admin/login');
     }
-       public function dangxuat(){
-            Auth::logout();
-            return view('admin/login');
-        }
+
+    public function dangxuat()
+    {
+        Auth::logout();
+        return view('admin/login');
+    }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +70,7 @@ class userController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,8 +81,8 @@ class userController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -90,7 +93,7 @@ class userController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
