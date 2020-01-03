@@ -26,22 +26,6 @@ Route::post('/admin/dangnhap', 'Api\userController@postdangnhapadmin');
 Route::get('/admin/logout', 'Api\userController@dangxuat');
 
 
-Route::get('thu', function () {
-    $product = product::find(1);
-    foreach ($product->comment as $comment) {
-        echo $comment->content . "<br>";
-
-        $comt = DB::table('comment')
-            ->join('products', 'product_id', '=', 'comment.id')
-            ->where('product_id', '=', $product)
-            ->select('comment.content', 'comment.id', 'comment.status', 'comment.time_created')
-            ->get();
-
-        echo $comt;
-    }
-
-
-});
 Route::get('test', function () {
     return view('admin.layout.index');
 });
@@ -105,28 +89,24 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-Route::get('trangchu', function () {
-    return view('pages.trangchu');
+Route::group(['prefix' => 'pages'], function () {
+
+    Route::get('/', 'PageController@trangchu');
+    Route::get('showproduct/{id}', 'PageController@showproduct');
+    Route::get('news', 'PageController@News');
+    Route::get('newdetail/{id}', 'PageController@newdetail');
+    Route::get('singleProduct/{id}/{a}', 'PageController@singleProduct');
+    Route::get('cart', 'PageController@getcart');
+    Route::get('cart', 'PageController@getcart');
+    Route::post('cart', 'PageController@postcart');
+    Route::post('loadmore', 'Productmore@loadMore');
+    Route::post('loadmore', 'Tintucmore@loadMore');
+    Route::post('timkiem', 'PageController@Timkiem');
+    Route::post('timkiemajax', 'PageController@TimkiemAjax');
+    Route::post('signUp', 'PageController@signUp');
+    Route::post('createSession', 'PageController@createSession');
+    Route::post('login', 'PageController@login');
+
+
 });
 
-Route::get('pages', 'PageController@trangchu');
-
-Route::get('pages/showproduct/{id}', 'PageController@showproduct');
-
-Route::get('pages/news', 'PageController@News');
-
-Route::get('pages/newdetail/{id}', 'PageController@newdetail');
-
-Route::get('pages/singleProduct/{id}/{a}', 'PageController@singleProduct');
-Route::get('pages/cart', 'PageController@getcart');
-Route::get('pages/cart', 'PageController@getcart');
-Route::post('pages/cart', 'PageController@postcart');
-
-Route::post('pages/loadmore', 'Productmore@loadMore');
-Route::post('tintuc/loadmore', 'Tintucmore@loadMore');
-Route::post('pages/timkiem', 'PageController@Timkiem');
-Route::post('pages/timkiemajax', 'PageController@TimkiemAjax');
-Route::post('pages/signUp', 'PageController@signUp');
-Route::post('pages/createSession', 'PageController@createSession');
-
-Route::post('pages/login', 'PageController@login');
