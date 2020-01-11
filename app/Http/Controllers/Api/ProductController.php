@@ -50,7 +50,6 @@ class ProductController extends Controller
         $comt = DB::table('comment')
             ->select('comment.content', 'comment.id', 'comment.status', 'comment.time_created', 'comment.user_id',
                 'users.username')
-            // ->join('products','product_id','=','id') nos bao ko hieu id la gi
             ->leftjoin('users', 'users.id', '=', 'comment.user_id')
             ->where('product_id', $id)
             ->get();
@@ -81,7 +80,7 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->save();
 
-        return redirect("admin/Product/them")->with('thongbao', 'Added Successful');
+        return redirect("admin/Product/them")->with('message', 'Added Successful');
 
 
     }
@@ -134,7 +133,7 @@ class ProductController extends Controller
         $product->save();
 
 
-        return redirect("admin/Product/sua/$id")->with('thongbao', 'Sửa Product Thành công');
+        return redirect("admin/Product/sua/$id")->with('message', 'Edit Product Successful');
         //
     }
 
@@ -148,7 +147,7 @@ class ProductController extends Controller
     {
         $product = product::find($id);
         $product->delete();
-        return redirect("admin/Product/danhsach")->with('thongbao', 'Deleted Succesful');
+        return redirect("admin/Product/danhsach")->with('message', 'Deleted Succesful');
 
     }
 }

@@ -29,8 +29,8 @@ class PageController extends Controller
         view()->share('phone', $phone);
         $tablet = product::where('id_category', 62)->get();
         view()->share('tablet', $tablet);
-        $phukien = product::where('id_category', 70)->get();
-        view()->share('phukien', $phukien);
+        $electric = product::where('id_category', 70)->get();
+        view()->share('phukien', $electric);
         $laptop = product::where('id_category', 63)->get();
         view()->share('laptop', $laptop);
         $new = $new = Db::table('products')
@@ -78,8 +78,8 @@ class PageController extends Controller
 
     public function newdetail($id)
     {
-        $tintuc = promotionNews::where('id', $id)->get();
-        return view('pages.tintucdetail', ['tintuc' => $tintuc]);
+        $promotionNews = promotionNews::where('id', $id)->get();
+        return view('pages.tintucdetail', ['tintuc' => $promotionNews]);
     }
 
     public function singleProduct($id, $a)
@@ -116,12 +116,6 @@ class PageController extends Controller
         $data = $request->input('dl');
         dd(session()->put('cart', $data));
         $cart = session()->put('cart', $data);
-        print_r($data);
-        dd($cart);
-
-        print_r($data);
-
-
         return response()->json($data);
 
     }

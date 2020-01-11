@@ -29,46 +29,46 @@
                             @endforeach</div>
                     @endif
 
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
 
                     @endif
 
-                    <form action="admin/promotionNews/edit/<?php echo $tintuc['id'] ?>" method="POST"
+                    <form action="admin/promotionNews/edit/<?php echo $promotionNews['id'] ?>" method="POST"
                           enctype="multipart/form-data">
                         <input type="hidden" name="_Token " value="{{csrf_token()}}"/>
                         @csrf
                         <div class="form-group">
                             <label>Tiêu đề</label>
-                            <input class="form-control" value="<?php echo $tintuc['title'] ?>" name="title"
+                            <input class="form-control" value="<?php echo $promotionNews['title'] ?>" name="title"
                                    placeholder="Nhập tiêu đề" required/>
                         </div>
                         <div class="form-group">
                             <label>Tóm tắt</label>
                             <textarea id="demo" name="summary" class="form-control ckeditor" rows="3"
-                                      required><?php echo $tintuc['summary'] ?></textarea>
+                                      required><?php echo $promotionNews['summary'] ?></textarea>
                         </div>
                         <div class="form-group">
                             <label>Nội dung</label>
                             <textarea id="demo" name="content" class="form-control ckeditor" rows="5"
-                                      required><?php echo $tintuc['content'] ?></textarea>
+                                      required><?php echo $promotionNews['content'] ?></textarea>
                         </div>
                         <div class="form-group">
                             <label>Ảnh tiêu biểu</label>
-                            <p><img src="uploads/ImagePromotionNews/{{$tintuc['image']}} ?>" width="400"></p>
+                            <p><img src="uploads/ImagePromotionNews/{{$promotionNews['image']}} ?>" width="400"></p>
                             <input type="file" name="image" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Trạng thái</label>
                             <label class="radio-inline">
                                 <input name="status" value="0"
-                                       <?php if($tintuc['status'] == 0){ ?>
+                                       <?php if($promotionNews['status'] == 0){ ?>
                                        checked="" <?php } ?>
                                        type="radio">Không hiển thị
                             </label>
                             <label class="radio-inline">
                                 <input name="status" value="1"
-                                       <?php if($tintuc['status'] == 1){?>
+                                       <?php if($promotionNews['status'] == 1){?>
                                        checked="" <?php } ?>
                                        type="radio">Hiển thị
                             </label>

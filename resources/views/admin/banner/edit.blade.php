@@ -30,12 +30,12 @@
                         </div>
 
                     @endif
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
 
                     @endif
 
-                    <form action="admin/banner/edit/<?php echo $quangcao['id'] ?>" method="POST"
+                    <form action="admin/banner/edit/<?php echo $banner['id'] ?>" method="POST"
                           enctype="multipart/form-data">
                         <input type="hidden" name="_Token" value="{{csrf_token()}}"/>
                         @csrf
@@ -43,35 +43,35 @@
                         <div class="form-group">
                             <label>Tên</label>
                             <input class="form-control" value="<?php
-                            echo $quangcao['name']
+                            echo $banner['name']
                             ?>" name="name" placeholder="Nhập tên" required/>
                         </div>
                         <div class="form-group">
                             <label>Hình ảnh</label>
-                            <p><img src="uploads/ImageBanner/<?php echo $quangcao['image'] ?>" width="300px" alt=""></p>
+                            <p><img src="uploads/ImageBanner/<?php echo $banner['image'] ?>" width="300px" alt=""></p>
                             <input type="file" name="image" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Nội dung</label>
                             <input id="demo" name="content" class="form-control"
-                                   value="<?php echo $quangcao['content']; ?>">
+                                   value="<?php echo $banner['content']; ?>">
                         </div>
                         <div class="form-group">
                             <label>Đường dẫn tới sản phẩm</label>
-                            <input class="form-control" value="<?php echo $quangcao['link'] ?>" name="link"
+                            <input class="form-control" value="<?php echo $banner['link'] ?>" name="link"
                                    placeholder="Nhập đường dẫn" required/>
                         </div>
                         <div class="form-group">
                             <label>Kiểu quảng cáo</label>
                             <label class="radio-inline">
                                 <input name="type" value="0"
-                                       <?php if($quangcao['type'] == 0){?>
+                                       <?php if($banner['type'] == 0){?>
                                        checked <?php } ?>
                                        type="radio">Slide
                             </label>
                             <label class="radio-inline">
                                 <input name="type" value="1"
-                                       <?php if($quangcao['type'] == 1){?>
+                                       <?php if($banner['type'] == 1){?>
                                        checked <?php } ?>
                                        type="radio">Banner
                             </label>
@@ -80,13 +80,13 @@
                             <label>Trạng thái</label>
                             <label class="radio-inline">
                                 <input name="status" value="0"
-                                       <?php if($quangcao['status'] == 0){ ?>
+                                       <?php if($banner['status'] == 0){ ?>
                                        checked <?php } ?>
                                        type="radio">Không hiển thị
                             </label>
                             <label class="radio-inline">
                                 <input name="status" value="1"
-                                       <?php if($quangcao['status'] == 1){?>
+                                       <?php if($banner['status'] == 1){?>
                                        checked
                                        <?php } ?>
                                        type="radio">Hiển thị

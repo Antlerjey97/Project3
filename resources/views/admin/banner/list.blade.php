@@ -13,8 +13,8 @@
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
 
                     @endif
                     <table class="table table-striped table-bordered table-hover table-responsive">
@@ -33,7 +33,7 @@
                         </thead>
                         <tbody>
                         <?php $i = 1; ?>
-                        <?php foreach ($quangcao as $value): ?>
+                        <?php foreach ($banner as $value): ?>
                         <tr class="odd gradeX" align="center">
                             <th class="text-center"><?php echo $i ?></th>
                             <th class="text-center" style="max-width: 200px;"><?php echo $value['name']; ?></th>
@@ -64,7 +64,7 @@
             <!-- /.row -->
         </div>
 
-    {!!$quangcao->links()!!}
+    {!!$banner->links()!!}
 
     <!-- /.container-fluid -->
     </div>

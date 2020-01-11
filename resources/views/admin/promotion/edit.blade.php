@@ -29,9 +29,9 @@
                         </div>
                     @endif
 
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
-                    @endif
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
+                    @message
                     <form action="admin/promotion/edit/<?php echo $promotion['id'] ?>" method="POST">
 
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>

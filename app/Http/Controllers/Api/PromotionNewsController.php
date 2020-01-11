@@ -30,8 +30,8 @@ class PromotionNewsController extends Controller
     public function getedit($id)
     {
 
-        $tintuc = promotionNews::find($id);
-        return view('admin.promotionNews.edit', ['tintuc' => $tintuc]);
+        $promotionNews = promotionNews::find($id);
+        return view('admin.promotionNews.edit', ['promotionNews' => $promotionNews]);
     }
 
     /**
@@ -50,7 +50,7 @@ class PromotionNewsController extends Controller
         $promotionNews->status = $request->status;
 
         $promotionNews->save();
-        return redirect("admin/promotionNews/them")->with('thongbao', 'Added Successful');
+        return redirect("admin/promotionNews/them")->with('message', 'Added Successful');
         //
     }
 
@@ -101,7 +101,7 @@ class PromotionNewsController extends Controller
         );
 
         $promotionNews->save();
-        return redirect("admin/promotionNews/sua/$id")->with('thongbao', 'Updated Succeccful');
+        return redirect("admin/promotionNews/sua/$id")->with('message', 'Updated Succeccful');
     }
 
     /**

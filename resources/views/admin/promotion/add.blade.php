@@ -19,9 +19,9 @@
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-12">
-                    @if (session('thongbao'))
+                    @if (session('message'))
 
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                        <div class="alert alert-success">{{session('message')}}</div>
 
                     @endif
                 </div>

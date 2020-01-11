@@ -48,7 +48,7 @@ class CategoryController extends Controller
         $category->sort = $request->sort;
         $category->save();
 
-        return redirect('admin/category/them')->with('thongbao', 'Add Successful');
+        return redirect('admin/category/them')->with('message', 'Add Successful');
     }
 
     /**
@@ -88,7 +88,7 @@ class CategoryController extends Controller
         $category->status = $request->status;
         $category->sort = $request->sort;
         $category->save();
-        return redirect("admin/category/sua/$id")->with('thongbao', 'Sửa Danh Mục Thành công');;
+        return redirect("admin/category/sua/$id")->with('message', 'Edit Successful');;
     }
 
     /**
@@ -101,6 +101,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect('admin/category/danhsach')->with('thongbao', 'Deleted Successful');
+        return redirect('admin/category/danhsach')->with('message', 'Deleted Successful');
     }
 }

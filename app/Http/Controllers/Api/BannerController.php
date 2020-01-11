@@ -16,16 +16,16 @@ class BannerController extends Controller
     public function index()
     {
         //
-        $quangcao = Banner::all();
-        $quangcao = Banner::paginate(4);
-        return view('admin.banner.list', ['quangcao' => $quangcao]);
+        $banner = Banner::all();
+        $banner = Banner::paginate(4);
+        return view('admin.banner.list', ['banner' => $banner]);
     }
 
     public function getedit($id)
     {
-        $quangcao = Banner::find($id);
+        $banner = Banner::find($id);
 
-        return view('admin.banner.edit', ['quangcao' => $quangcao]);
+        return view('admin.banner.edit', ['banner' => $banner]);
     }
 
 
@@ -52,7 +52,7 @@ class BannerController extends Controller
 
         $banner->save();
 
-        return redirect('admin/banner/them')->with('thongbao', 'Added Successful');
+        return redirect('admin/banner/them')->with('message', 'Added Successful');
     }
 
     /**
@@ -76,15 +76,15 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $quangcao = Banner::find($id);
-        $quangcao->name = $request->name;
-        $quangcao->image = $request->image->getClientOriginalName();
-        $quangcao->content = $request->content;
-        $quangcao->link = $request->link;
-        $quangcao->type = $request->type;
-        $quangcao->status = $request->status;
+        $promotion = Banner::find($id);
+        $promotion->name = $request->name;
+        $promotion->image = $request->image->getClientOriginalName();
+        $promotion->content = $request->content;
+        $promotion->link = $request->link;
+        $promotion->type = $request->type;
+        $promotion->status = $request->status;
 
-        $quangcao->save();
+        $promotion->save();
 
         $this->validate($request, [
                 'name' => 'required:banner,name|min:3|max:100',
@@ -103,7 +103,7 @@ class BannerController extends Controller
         //  dd(($request->image->getClientOriginalName()));
         //  die();
 
-        return redirect("admin/banner/sua/$id")->with('thongbao', 'Updated Successful');
+        return redirect("admin/banner/sua/$id")->with('message', 'Updated Successful');
 
 
     }
@@ -118,6 +118,6 @@ class BannerController extends Controller
     {
         $banner = Banner::find($id);
         $banner->delete();
-        return redirect('admin/banner/danhsach')->with('thongbao', 'Deleted Succesful');
+        return redirect('admin/banner/danhsach')->with('message', 'Deleted Succesful');
     }
 }

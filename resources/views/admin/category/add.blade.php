@@ -19,8 +19,8 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
                     @endif
                     <form action="admin/category/add" method="POST" role="form" validate>
                         <input type="hidden" name="_Token" value="{{csrf_token()}}">

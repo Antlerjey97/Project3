@@ -50,7 +50,7 @@ class PromotionController extends Controller
         $promotion->time_end = $request->timeEnd;
         $promotion->status = $request->status;
         $promotion->save();
-        return redirect("admin/promotion/them")->with('thongbao', 'Added Successful');
+        return redirect("admin/promotion/them")->with('message', 'Added Successful');
     }
 
     /**
@@ -99,7 +99,7 @@ class PromotionController extends Controller
 
         $promotion->save();
 
-        return redirect("admin/promotion/sua/$id")->with('thongbao', 'Đã Sửa Khuyến mãi thành công');
+        return redirect("admin/promotion/sua/$id")->with('message', 'Edit Successful');
         //
     }
 
@@ -115,7 +115,7 @@ class PromotionController extends Controller
         $promotion = promotion::find($id);
         $promotion->delete();
 
-        return redirect("admin/promotion/danhsach")->with('thongbao', 'Deleted Succesful');
+        return redirect("admin/promotion/danhsach")->with('message', 'Deleted Succesful');
 
     }
 }

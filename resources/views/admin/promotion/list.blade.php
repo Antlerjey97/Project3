@@ -12,8 +12,8 @@
                 </div>
                 <div class="col-lg-12">
                     <!-- /.col-lg-12 -->
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
                     @endif
                 </div>
                 <table class="table table-striped table-bordered table-hover">

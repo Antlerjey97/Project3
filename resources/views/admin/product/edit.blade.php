@@ -30,8 +30,8 @@
                     </div>
                 @endif
 
-                @if (session('thongbao'))
-                    <div class="alert alert-success">{{session('thongbao')}}</div>
+                @if (session('message'))
+                    <div class="alert alert-success">{{session('message')}}</div>
                 @endif
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <form action="admin/Product/edit/<?php echo $product['id'] ?>" method="POST" role="form">

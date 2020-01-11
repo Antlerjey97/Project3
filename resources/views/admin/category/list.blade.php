@@ -16,8 +16,8 @@
                     <?php endif ?>
                 </div>
                 <div class="col-lg-12">
-                    @if (session('thongbao'))
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                    @if (session('message'))
+                        <div class="alert alert-success">{{session('message')}}</div>
 
 
                     @endif

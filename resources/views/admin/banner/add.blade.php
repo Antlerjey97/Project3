@@ -23,9 +23,9 @@
                     // $this->session->unset_userdata($status);
                     ?>
                     <?php //endif ?>
-                    @if (session('thongbao'))
+                    @if (session('message'))
 
-                        <div class="alert alert-success">{{session('thongbao')}}</div>
+                        <div class="alert alert-success">{{session('message')}}</div>
 
                     @endif
 
